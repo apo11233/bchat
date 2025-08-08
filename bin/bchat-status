@@ -1,0 +1,112 @@
+#!/bin/bash
+# bchat Status Checker
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CONFIG_FILE="$SCRIPT_DIR/config/config.json"
+CHATS_DIR="$SCRIPT_DIR/data/chats"
+LOGS_DIR="$SCRIPT_DIR/data/logs"
+BIN_DIR="$SCRIPT_DIR/bin"
+
+echo "🔍 bchat System Status"
+echo "======================"
+echo ""
+
+# Check configuration
+if [ -f "$CONFIG_FILE" ]; then
+    echo "✅ Configuration: $CONFIG_FILE"
+    if python3 -c "import json; json.load(open('$CONFIG_FILE'))" 2>/dev/null; then
+        echo "   📋 Config file is valid JSON"
+    else
+        echo "   ❌ Config file has JSON errors"
+    fi
+else
+    echo "❌ Configuration file not found"
+fi
+
+# Check API key
+if [ -n "$GOOGLE_API_KEY" ]; then
+    echo "✅ Google API Key: Set (${#GOOGLE_API_KEY} characters)"
+    # Test API key with a simple call
+    if python3 -c "
+import os
+import google.generativeai as genai
+genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
+model = genai.GenerativeModel('gemini-2.5-flash')
+response = model.generate_content('Hello')
+print('   🌟 API key working - Gemini responded')
+" 2>/dev/null; then
+        echo "   🌟 API key verified working"
+    else
+        echo "   ⚠️  API key set but may have issues"
+    fi
+else
+    echo "❌ GOOGLE_API_KEY not set in environment"
+fi
+
+# Check directories
+echo ""
+echo "📁 Directory Status:"
+for dir in "$CHATS_DIR" "$LOGS_DIR"; do
+    if [ -d "$dir" ]; then
+        file_count=$(ls -1 "$dir" 2>/dev/null | wc -l)
+        echo "   ✅ $(basename "$dir")/: $file_count files"
+    else
+        echo "   ❌ $(basename "$dir")/: Not found"
+    fi
+done
+
+# Check executables
+echo ""
+echo "🔧 Executable Status:"
+for script in bchat rchat runchat start; do
+    if [ -x "$BIN_DIR/$script" ] || [ -x "$SCRIPT_DIR/$script" ]; then
+        echo "   ✅ $script: Ready"
+    else
+        echo "   ❌ $script: Missing or not executable"
+    fi
+done
+
+# Check Python dependencies
+echo ""
+echo "🐍 Python Dependencies:"
+# Set PYTHONPATH to include reorganized source
+export PYTHONPATH="$SCRIPT_DIR/core/src:$PYTHONPATH"
+if python3 -c "import watchdog, google.generativeai, dotenv; print('   ✅ All core dependencies available')" 2>/dev/null; then
+    echo "   ✅ All core dependencies available"
+else
+    echo "   ❌ Missing Python dependencies - check virtual environment"
+    if [ -d "$SCRIPT_DIR/dev/venv" ]; then
+        echo "   💡 Try: source dev/venv/bin/activate"
+    fi
+fi
+
+# Check recent activity
+echo ""
+echo "📈 Recent Activity:"
+if [ -f "$LOGS_DIR/chat_monitor.log" ]; then
+    last_entry=$(tail -1 "$LOGS_DIR/chat_monitor.log" 2>/dev/null)
+    if [ -n "$last_entry" ]; then
+        echo "   📝 Last log entry: $last_entry"
+    else
+        echo "   📝 Log file exists but empty"
+    fi
+else
+    echo "   📝 No monitoring log found at $LOGS_DIR/chat_monitor.log"
+fi
+
+# Check if monitoring is running
+echo ""
+echo "🔄 Monitoring Status:"
+if pgrep -f "chat_monitor.py" >/dev/null; then
+    echo "   ✅ bchat monitor is running (PID: $(pgrep -f chat_monitor.py))"
+else
+    echo "   ⏸️  bchat monitor is not currently running"
+    echo "   💡 Run './start' or 'bin/start' to begin monitoring"
+fi
+
+echo ""
+echo "🚀 Quick Commands:"
+echo "   ./start          # Start monitoring"
+echo "   ./bchat          # Backup current chat"
+echo "   ./bchat-status   # Show this status"
+echo "   ./bchat --help   # Gemini CLI help"

@@ -1,0 +1,116 @@
+{
+  "system": {
+    "project_name": "chat_backup_system",
+    "version": "1.0.0",
+    "log_level": "INFO"
+  },
+  "paths": {
+    "project_root": "",
+    "chats_dir": "chats",
+    "logs_dir": "logs",
+    "claude_log": "chats/claude_current_day_raw.log",
+    "gemini_log": "chats/gemini_current_day_raw.log",
+    "chat_index": "chats/chat_index.json",
+    "context_summary": "chats/context_summary.json"
+  },
+  "monitoring": {
+    "enabled": true,
+    "watch_interval": 1.0,
+    "debounce_delay": 2.0,
+    "triggers": ["bchat"],
+    "auto_start": true,
+    "max_file_size_mb": 50
+  },
+  "consolidation": {
+    "schedule": "daily",
+    "auto_trigger": true,
+    "quality_threshold": 0.8,
+    "max_retries": 3,
+    "backup_retention_days": 90,
+    "consolidation_hour": 23
+  },
+  "api": {
+    "provider": "gemini",
+    "model": "gemini-2.5-flash",
+    "fallback_model": "gemini-2.5-pro",
+    "max_retries": 3,
+    "timeout": 30,
+    "rate_limit_requests_per_minute": 60,
+    "max_tokens": 4096,
+    "temperature": 0.3
+  },
+  "error_handling": {
+    "circuit_breaker_threshold": 5,
+    "circuit_breaker_timeout": 300,
+    "exponential_backoff_base": 2,
+    "max_backoff_seconds": 60,
+    "log_errors": true,
+    "silent_mode": true
+  },
+  "keywords": {
+    "trigger_words": ["bchat"],
+    "filter_keywords": ["bug", "error", "fix", "config", "workflow", "stage", "implementation", "claude", "code", "debug"],
+    "error_patterns": ["error:.*", "exception:.*", "failed:.*", "traceback:.*"]
+  },
+  "json_schema": {
+    "chat_log": {
+      "id": "string",
+      "timestamp": "string",
+      "stage": "string", 
+      "ai_source": "string",
+      "session_id": "string",
+      "content_hash": "string",
+      "keywords": "array",
+      "summary": "string",
+      "sections": "array",
+      "metadata": "object"
+    },
+    "daily_log": {
+      "date": "string",
+      "stage": "string",
+      "executive_summary": "string",
+      "sessions": "array",
+      "total_interactions": "number",
+      "key_metrics": "object",
+      "entities": "object"
+    },
+    "chat_index": {
+      "date": "string",
+      "stage": "string", 
+      "keywords": "array",
+      "file_path": "string",
+      "ai_source": "string",
+      "executive_summary": "string",
+      "entities": "object",
+      "relevance_score": "number"
+    }
+  },
+  "entity_extraction": {
+    "enabled": true,
+    "confidence_threshold": 0.7,
+    "entities": [
+      "files_modified",
+      "key_decisions", 
+      "errors_fixed",
+      "database_tables",
+      "api_endpoints",
+      "commands_executed",
+      "configurations_changed"
+    ]
+  },
+  "vscode": {
+    "auto_start_on_folder_open": true,
+    "show_status_bar": false,
+    "show_notifications": false,
+    "background_tasks": true,
+    "silent_mode": true
+  },
+  "context": {
+    "max_context_size_tokens": 8000,
+    "context_overlap_tokens": 500,
+    "auto_load_context": true,
+    "preload_recent_sessions": 3,
+    "relevance_scoring": true,
+    "semantic_search": true
+  }
+}

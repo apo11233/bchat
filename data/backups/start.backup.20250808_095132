@@ -1,0 +1,12 @@
+#!/bin/bash
+# Quick start script for chat monitor
+echo "🚀 Starting Chat Monitor..."
+echo "Press Ctrl+C to stop"
+
+# Check for API key
+if [ -z "$GOOGLE_API_KEY" ] && [ -z "$GEMINI_API_KEY" ]; then
+    echo "⚠️  Warning: No API key set. Set GOOGLE_API_KEY or GEMINI_API_KEY for full functionality"
+fi
+
+# Start chat monitor using rchat
+exec "$(dirname "$0")/rchat"

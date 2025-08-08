@@ -1,0 +1,15 @@
+#!/bin/bash
+# bchat Launcher Script - Short Command
+BIN_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="$(cd "$BIN_DIR/.." && pwd)"
+
+# Set PYTHONPATH for reorganized structure
+export PYTHONPATH="$SCRIPT_DIR/core/src:$PYTHONPATH"
+
+if [ -f "$SCRIPT_DIR/core/src/chat_monitor.py" ]; then
+    cd "$SCRIPT_DIR"
+    python3 core/src/chat_monitor.py "$@"
+else
+    echo "bchat not found. Please check installation."
+    exit 1
+fi

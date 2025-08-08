@@ -1,0 +1,29 @@
+#!/bin/bash
+# Enhanced bchat - Chat backup and Gemini CLI wrapper
+
+# Resolve the actual script directory (follow symlinks)
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do
+    SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+    SOURCE="$(readlink "$SOURCE")"
+    [[ $SOURCE != /* ]] && SOURCE="$SCRIPT_DIR/$SOURCE"
+done
+BIN_DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+SCRIPT_DIR="$(cd -P "$BIN_DIR/.." && pwd)"
+
+# If no arguments provided, trigger chat backup/consolidation
+if [ $# -eq 0 ]; then
+    echo "🔄 Triggering chat backup and consolidation..."
+    
+    # Run chat monitor consolidation
+    if [ -x "$BIN_DIR/rchat" ]; then
+        "$BIN_DIR/rchat" --consolidate
+        echo "✅ Chat backup completed"
+    else
+        echo "❌ bchat monitor not found. Please run ./install.sh first."
+        exit 1
+    fi
+else
+    # Pass arguments to gemini wrapper for normal Gemini CLI usage
+    exec "$SCRIPT_DIR/config/wrappers/gemini_wrapper.sh" "$@"
+fi

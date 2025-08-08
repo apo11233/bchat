@@ -1,0 +1,15 @@
+# Chat Monitor Python Dependencies
+# Core monitoring and file watching
+watchdog>=4.0.0
+
+# Google Gemini API for AI analysis
+google-generativeai>=0.8.0
+
+# Environment variable management
+python-dotenv>=1.0.0
+
+# Optional: Enhanced JSON handling
+# jsonschema>=4.0.0  # Uncomment for configuration validation
+
+# Optional: Better error handling and logging
+# structlog>=23.0.0  # Uncomment for structured logging
