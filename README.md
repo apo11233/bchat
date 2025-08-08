@@ -8,7 +8,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Contributors](https://img.shields.io/github/contributors/Nyrk0/bchat.svg)](https://github.com/Nyrk0/bchat/graphs/contributors)
 
-A lightweight, fully local Python utility for capturing AI-powered CLI chat logs from Visual Studio Code (and potentially Cursor-compatible). Designed for simplicity, it requires no external platforms or complex dependencies, making it easy to adapt to your environment.
+A lightweight, fully local Python utility for capturing AI-powered CLI chat logs with intelligent semantic processing. Features dual AI provider support (Claude/Gemini), automatic chat analysis, and structured JSON backup generation. Designed for simplicity with professional-grade organization and no external platform dependencies.
 
 ## 📋 Development Guidelines
 **For Developers and AI Contributors**: All development work must follow the mandatory directives in [`dev_directives/general.md`](dev_directives/general.md). These guidelines ensure code quality, security, and consistency across the project.
@@ -28,12 +28,13 @@ A lightweight, fully local Python utility for capturing AI-powered CLI chat logs
 ## ✨ Features
 
 - 🔍 **Real-time Monitoring**: Automatically watches and processes AI chat logs
-- 🧠 **AI-Powered Analysis**: Uses Gemini API for intelligent summarization and entity extraction
+- 🧠 **Dual AI Providers**: Choose between Claude or Gemini APIs for intelligent analysis
 - 📊 **Structured Data**: Creates machine-readable JSON indexes with metadata
 - 🔄 **Daily Consolidation**: Merges multiple chat files into organized single files
 - 🚀 **Universal Access**: `bchat` command works from any directory in your workspace
 - 💬 **Multi-AI Support**: Compatible with Claude Code, Gemini CLI, and extensible to other AI tools
 - 🛡️ **Resilient Architecture**: Circuit breaker patterns, retry logic, and graceful error handling
+- ⚡ **Professional Organization**: Clean workspace structure with essential files at root level
 
 ---
 
@@ -43,7 +44,7 @@ A lightweight, fully local Python utility for capturing AI-powered CLI chat logs
 - **Python 3.8+** (required)
 - **Node.js 16+** (optional, for Gemini CLI)
 - **Git** (for installation)
-- **Google API key** (optional, for AI analysis)
+- **API key** (optional, for AI analysis): Google API key for Gemini OR Anthropic API key for Claude
 
 ### Installation (macOS/Linux)
 
@@ -61,8 +62,9 @@ A lightweight, fully local Python utility for capturing AI-powered CLI chat logs
 3. **Configure API keys (optional):**
    ```bash
    cp .env.example .env
-   # Edit .env and add your Google API key:
-   # GOOGLE_API_KEY=your_actual_api_key_here
+   # Edit .env and add your preferred API key:
+   # For Gemini: GOOGLE_API_KEY=your_google_api_key_here
+   # For Claude: ANTHROPIC_API_KEY=your_anthropic_api_key_here
    ```
 
 4. **Start using bchat:**
@@ -144,8 +146,9 @@ your-workspace/
 
 ### Environment Variables (.env)
 ```bash
-# Required: Google API key for AI processing
-GOOGLE_API_KEY=your_google_api_key_here
+# API Keys (choose your preferred provider)
+GOOGLE_API_KEY=your_google_api_key_here        # For Gemini provider
+ANTHROPIC_API_KEY=your_anthropic_api_key_here  # For Claude provider
 
 # Optional: Chat log retention (default: 90 days)
 CHAT_LOG_RETENTION_DAYS=90
@@ -160,6 +163,13 @@ CHAT_MONITOR_DEBUG=false
   "system": {
     "project_name": "your_project",
     "log_level": "INFO"
+  },
+  "api": {
+    "provider": "gemini",
+    "model": "gemini-2.5-flash",
+    "claude": {
+      "model": "claude-3-5-sonnet-20241022"
+    }
   },
   "monitoring": {
     "enabled": true,

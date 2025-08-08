@@ -178,7 +178,7 @@ System processes content immediately when "bchat" keyword detected in logs. Othe
 - Manual testing via `python3 src/chat_monitor.py --consolidate`
 - Path manager has built-in test: `cd src/utils && python3 path_manager.py`
 - Integration testing via `bchat` commands
-- Check logs in `logs/chat_monitor.log`
+- Check logs in `logs/bchat.log`
 
 ### Common Issues
 - Missing GOOGLE_API_KEY environment variable

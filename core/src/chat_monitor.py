@@ -69,17 +69,42 @@ class APIManager:
         self.config = config
         self.api_config = config.get('api', {})
         self.error_config = config.get('error_handling', {})
+        self.provider = self.api_config.get('provider', 'gemini').lower()
         
-        # Initialize Gemini API
+        # Initialize APIs based on provider
+        if self.provider == 'gemini':
+            self._initialize_gemini()
+        elif self.provider == 'claude':
+            self._initialize_claude()
+        else:
+            raise ValueError(f"Unsupported API provider: {self.provider}")
+        
+        # Initialize common components
+        self._initialize_common()
+    
+    def _initialize_gemini(self):
+        """Initialize Gemini API."""
         api_key = os.getenv('GOOGLE_API_KEY')
         if not api_key:
-            raise ValueError("GOOGLE_API_KEY environment variable is required")
+            raise ValueError("GOOGLE_API_KEY environment variable is required for Gemini")
         
         genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel(
             model_name=self.api_config.get('model', 'gemini-2.5-flash')
         )
+    
+    def _initialize_claude(self):
+        """Initialize Claude API."""
+        self.anthropic_api_key = os.getenv('ANTHROPIC_API_KEY')
+        if not self.anthropic_api_key:
+            raise ValueError("ANTHROPIC_API_KEY environment variable is required for Claude")
         
+        self.claude_config = self.api_config.get('claude', {})
+        self.claude_model = self.claude_config.get('model', 'claude-3-5-sonnet-20241022')
+        self.claude_api_url = self.claude_config.get('api_url', 'https://api.anthropic.com/v1/messages')
+        
+    def _initialize_common(self):
+        """Initialize common components after API setup."""
         # Circuit breaker for API resilience
         self.circuit_breaker = CircuitBreaker(
             failure_threshold=self.error_config.get('circuit_breaker_threshold', 5),
@@ -112,8 +137,8 @@ class APIManager:
         delay = min(base ** attempt, max_backoff)
         return delay
     
-    def call_gemini_api(self, content: str, ai_source: str, prompt_type: str = 'summarize') -> Dict:
-        """Make API call to Gemini with error handling and retries."""
+    def call_api(self, content: str, ai_source: str, prompt_type: str = 'summarize') -> Dict:
+        """Make API call with error handling and retries."""
         max_retries = self.api_config.get('max_retries', 3)
         
         for attempt in range(max_retries + 1):
@@ -128,11 +153,19 @@ class APIManager:
                 else:
                     prompt = content
                 
-                # Make API call through circuit breaker
-                response = self.circuit_breaker.call(
-                    self._make_api_request,
-                    prompt
-                )
+                # Make API call through circuit breaker based on provider
+                if self.provider == 'gemini':
+                    response = self.circuit_breaker.call(
+                        self._make_gemini_request,
+                        prompt
+                    )
+                elif self.provider == 'claude':
+                    response = self.circuit_breaker.call(
+                        self._make_claude_request,
+                        prompt
+                    )
+                else:
+                    raise ValueError(f"Unsupported provider: {self.provider}")
                 
                 return self._parse_response(response)
                 
@@ -152,8 +185,8 @@ class APIManager:
                         "configurations": []
                     }
     
-    def _make_api_request(self, prompt: str):
-        """Make the actual API request."""
+    def _make_gemini_request(self, prompt: str):
+        """Make Gemini API request."""
         generation_config = {
             "response_mime_type": "application/json",
             "max_output_tokens": self.api_config.get('max_tokens', 4096),
@@ -164,6 +197,40 @@ class APIManager:
             prompt,
             generation_config=generation_config
         )
+        
+        return response
+    
+    def _make_claude_request(self, prompt: str):
+        """Make Claude API request."""
+        import requests
+        
+        headers = {
+            "Content-Type": "application/json",
+            "x-api-key": self.anthropic_api_key,
+            "anthropic-version": "2023-06-01"
+        }
+        
+        data = {
+            "model": self.claude_model,
+            "max_tokens": self.claude_config.get('max_tokens', 4096),
+            "temperature": self.claude_config.get('temperature', 0.3),
+            "messages": [
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ]
+        }
+        
+        response = requests.post(
+            self.claude_api_url,
+            headers=headers,
+            json=data,
+            timeout=self.api_config.get('timeout', 30)
+        )
+        
+        if response.status_code != 200:
+            raise Exception(f"Claude API error: {response.status_code} - {response.text}")
         
         return response
     
@@ -212,10 +279,23 @@ Return JSON with these entities:
     def _parse_response(self, response) -> Dict:
         """Parse API response and handle errors."""
         try:
-            if hasattr(response, 'text'):
-                return json.loads(response.text)
+            if self.provider == 'gemini':
+                # Gemini response format
+                if hasattr(response, 'text'):
+                    return json.loads(response.text)
+                else:
+                    return {"error": "Invalid Gemini response format"}
+            elif self.provider == 'claude':
+                # Claude response format
+                response_data = response.json()
+                content = response_data.get('content', [])
+                if content and len(content) > 0:
+                    text_content = content[0].get('text', '')
+                    return json.loads(text_content)
+                else:
+                    return {"error": "Invalid Claude response format"}
             else:
-                return {"error": "Invalid response format"}
+                return {"error": f"Unknown provider: {self.provider}"}
         except json.JSONDecodeError as e:
             logging.error(f"Failed to parse API response as JSON: {e}")
             return {
@@ -313,7 +393,7 @@ class ChatMonitor:
             level=log_level,
             format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
             handlers=[
-                logging.FileHandler(os.path.join(logs_dir, 'chat_monitor.log')),
+                logging.FileHandler(os.path.join(logs_dir, 'bchat.log')),
                 logging.StreamHandler(sys.stdout) if not self.config.get('error_handling', {}).get('silent_mode', True) else logging.NullHandler()
             ]
         )
@@ -421,7 +501,7 @@ class ChatMonitor:
                 return
             
             # Generate summary using API
-            summary_data = self.api_manager.call_gemini_api(
+            summary_data = self.api_manager.call_api(
                 relevant_content,
                 ai_source,
                 'summarize'

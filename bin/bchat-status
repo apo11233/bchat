@@ -83,15 +83,15 @@ fi
 # Check recent activity
 echo ""
 echo "📈 Recent Activity:"
-if [ -f "$LOGS_DIR/chat_monitor.log" ]; then
-    last_entry=$(tail -1 "$LOGS_DIR/chat_monitor.log" 2>/dev/null)
+if [ -f "$LOGS_DIR/bchat.log" ]; then
+    last_entry=$(tail -1 "$LOGS_DIR/bchat.log" 2>/dev/null)
     if [ -n "$last_entry" ]; then
         echo "   📝 Last log entry: $last_entry"
     else
         echo "   📝 Log file exists but empty"
     fi
 else
-    echo "   📝 No monitoring log found at $LOGS_DIR/chat_monitor.log"
+    echo "   📝 No monitoring log found at $LOGS_DIR/bchat.log"
 fi
 
 # Check if monitoring is running
