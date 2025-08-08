@@ -1,0 +1,36 @@
+[
+  {
+    "date": "2025-08-08",
+    "stage": "stage_00_refactor",
+    "keywords": [
+      "code"
+    ],
+    "file_path": "chat_log_gemini_20250808_113038.json",
+    "ai_source": "Gemini",
+    "executive_summary": "Content processed but parsing failed",
+    "entities": {
+      "decisions": [],
+      "errors": [],
+      "configurations": []
+    },
+    "relevance_score": 1.1
+  },
+  {
+    "date": "2025-08-08",
+    "stage": "stage_00_refactor",
+    "keywords": [
+      "config",
+      "claude",
+      "code"
+    ],
+    "file_path": "chat_log_claude_20250808_113042.json",
+    "ai_source": "Claude",
+    "executive_summary": "Content processed but parsing failed",
+    "entities": {
+      "decisions": [],
+      "errors": [],
+      "configurations": []
+    },
+    "relevance_score": 1.3
+  }
+]

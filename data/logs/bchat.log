@@ -18,3 +18,19 @@
 2025-08-08 11:23:35,930 - root - INFO - Chat monitor initialized
 2025-08-08 11:23:35,930 - root - INFO - Triggering manual consolidation for 2025-08-08
 2025-08-08 11:23:35,930 - root - INFO - Manual consolidation completed
+2025-08-08 11:28:47,792 - root - ERROR - Fatal error: ANTHROPIC_API_KEY environment variable is required for Claude
+2025-08-08 11:29:18,534 - root - INFO - Chat monitor initialized
+2025-08-08 11:29:18,534 - root - INFO - Triggering manual consolidation for 2025-08-08
+2025-08-08 11:29:18,534 - root - INFO - Manual consolidation completed
+2025-08-08 11:30:07,740 - root - INFO - Chat monitor initialized
+2025-08-08 11:30:07,741 - root - INFO - Triggering manual consolidation for 2025-08-08
+2025-08-08 11:30:07,741 - root - INFO - Manual consolidation completed
+2025-08-08 11:30:33,502 - root - INFO - Chat monitor initialized
+2025-08-08 11:30:33,502 - root - INFO - Triggering manual consolidation for 2025-08-08
+2025-08-08 11:30:33,502 - root - INFO - Processing raw log content from gemini_current_day_raw.log
+2025-08-08 11:30:38,243 - root - ERROR - Failed to parse API response as JSON: Expecting value: line 1 column 1 (char 0)
+2025-08-08 11:30:38,245 - root - INFO - Processed Gemini content - Session: gemini_20250808_113038
+2025-08-08 11:30:38,245 - root - INFO - Processing raw log content from claude_current_day_raw.log
+2025-08-08 11:30:42,871 - root - ERROR - Failed to parse API response as JSON: Expecting value: line 1 column 1 (char 0)
+2025-08-08 11:30:42,874 - root - INFO - Processed Claude content - Session: claude_20250808_113042
+2025-08-08 11:30:42,874 - root - INFO - Manual consolidation completed

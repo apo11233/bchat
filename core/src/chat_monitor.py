@@ -695,7 +695,7 @@ class ChatMonitor:
             date_str = datetime.now().strftime("%Y-%m-%d")
             logging.info(f"Triggering manual consolidation for {date_str}")
             
-            # Process any pending session data
+            # Process any pending session data from memory
             if date_str in self.session_data:
                 for ai_source, sessions in self.session_data[date_str].items():
                     for session in sessions:
@@ -703,6 +703,24 @@ class ChatMonitor:
                 
                 # Clear processed data
                 del self.session_data[date_str]
+            
+            # Also process content from raw log files
+            chats_dir = self.path_manager.get_chats_dir()
+            for file_name in os.listdir(chats_dir):
+                if file_name.endswith('_raw.log'):
+                    file_path = os.path.join(chats_dir, file_name)
+                    ai_source = self._get_ai_source(file_path)
+                    
+                    try:
+                        with open(file_path, 'r', encoding='utf-8') as f:
+                            content = f.read()
+                        
+                        if content.strip():
+                            logging.info(f"Processing raw log content from {file_name}")
+                            self._process_content(content, ai_source, immediate=True)
+                    
+                    except Exception as e:
+                        logging.error(f"Error reading {file_path}: {e}")
             
             logging.info("Manual consolidation completed")
             
@@ -713,6 +731,9 @@ class ChatMonitor:
 def main():
     """Main entry point for the chat monitor."""
     import argparse
+    
+    # Load environment variables from .env file
+    load_dotenv()
     
     parser = argparse.ArgumentParser(description='Enhanced Chat Monitor')
     parser.add_argument('--config', help='Path to configuration file')
