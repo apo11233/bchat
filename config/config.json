@@ -30,7 +30,7 @@
     "consolidation_hour": 23
   },
   "api": {
-    "provider": "gemini",
+    "provider": "claude",
     "model": "gemini-2.5-flash",
     "fallback_model": "gemini-2.5-pro",
     "max_retries": 3,
@@ -39,7 +39,7 @@
     "max_tokens": 4096,
     "temperature": 0.3,
     "claude": {
-      "model": "claude-3-5-sonnet-20241022",
+      "model": "claude-sonnet-4-20250514",
       "api_url": "https://api.anthropic.com/v1/messages",
       "max_tokens": 4096,
       "temperature": 0.3

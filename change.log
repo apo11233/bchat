@@ -343,3 +343,39 @@ Critical cleanup of disorganized workspace structure and implementation of Claud
 - ✅ Configuration valid and system responsive
 
 The workspace transformation from chaotic nested structure to clean, professional organization while simultaneously adding multi-provider API support demonstrates both cleanup and enhancement capabilities. Users now have a choice between Claude and Gemini for semantic chat processing, with the system maintaining robust error handling and monitoring across both providers.
+
+## 2025-08-08 - Claude Sonnet 4 Configuration and Model Selection
+
+Updated bchat to use the latest Claude Sonnet 4 model as the default AI provider for enhanced chat processing capabilities and improved semantic analysis quality.
+
+### Model Configuration Changes:
+
+- **Updated API Provider**: Changed default provider from `"gemini"` to `"claude"` in `config/config.json`
+- **Model Upgrade**: Configured Claude model to use `"claude-sonnet-4-20250514"` (Claude Sonnet 4)
+- **API Integration**: Verified Claude Sonnet 4 is the current model being used in this session
+- **Documentation Update**: Enhanced `.env.example` with Claude Sonnet 4 configuration note
+
+### Files Modified:
+
+**Configuration:**
+- `config/config.json` - Changed provider to "claude" and model to "claude-sonnet-4-20250514"
+- `.env.example` - Added note about Claude Sonnet 4 default configuration
+
+### Technical Implementation:
+
+- **Provider Selection**: bchat now defaults to Claude API with Sonnet 4 model
+- **Backwards Compatibility**: Gemini configuration maintained for users who prefer Google's models
+- **Environment Setup**: `ANTHROPIC_API_KEY` required for Claude Sonnet 4 usage
+- **Dependencies**: Confirmed `requests` library available for Claude API integration
+
+### Available Model Options:
+
+Users can now choose from various Claude models by updating the configuration:
+- `claude-sonnet-4-20250514` - Claude Sonnet 4 (default, most advanced)
+- `claude-3-5-sonnet-20241022` - Claude 3.5 Sonnet
+- `claude-3-5-haiku` - Claude 3.5 Haiku (faster processing)
+- `claude-3-opus` - Claude 3 Opus
+
+### Impact:
+
+bchat now uses the most advanced Claude model available (Sonnet 4) for superior semantic analysis, chat summarization, and JSON processing. Users benefit from enhanced AI capabilities while maintaining the flexibility to switch between providers based on their preferences and API access.
