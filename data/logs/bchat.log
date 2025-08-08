@@ -13,3 +13,8 @@
 2025-08-08 10:48:49,101 - root - INFO - Chat monitor initialized
 2025-08-08 10:48:49,101 - root - INFO - Triggering manual consolidation for 2025-08-08
 2025-08-08 10:48:49,101 - root - INFO - Manual consolidation completed
+2025-08-08 11:15:34,563 - root - ERROR - Fatal error: ANTHROPIC_API_KEY environment variable is required for Claude
+2025-08-08 11:23:23,265 - root - ERROR - Fatal error: ANTHROPIC_API_KEY environment variable is required for Claude
+2025-08-08 11:23:35,930 - root - INFO - Chat monitor initialized
+2025-08-08 11:23:35,930 - root - INFO - Triggering manual consolidation for 2025-08-08
+2025-08-08 11:23:35,930 - root - INFO - Manual consolidation completed
