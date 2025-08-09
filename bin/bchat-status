@@ -1,7 +1,7 @@
 #!/bin/bash
 # bchat Status Checker
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 CONFIG_FILE="$SCRIPT_DIR/config/config.json"
 CHATS_DIR="$SCRIPT_DIR/data/chats"
 LOGS_DIR="$SCRIPT_DIR/data/logs"
@@ -41,6 +41,13 @@ print('   🌟 API key working - Gemini responded')
     fi
 else
     echo "❌ GOOGLE_API_KEY not set in environment"
+fi
+
+# Check Anthropic API Key
+if [ -n "$ANTHROPIC_API_KEY" ]; then
+    echo "✅ Anthropic API Key: Set (${#ANTHROPIC_API_KEY} characters)"
+else
+    echo "❌ ANTHROPIC_API_KEY not set in environment"
 fi
 
 # Check directories
@@ -106,7 +113,7 @@ fi
 
 echo ""
 echo "🚀 Quick Commands:"
-echo "   ./start          # Start monitoring"
 echo "   ./bchat          # Backup current chat"
-echo "   ./bchat-status   # Show this status"
+echo "   ./bchat --status # Show this status"  
 echo "   ./bchat --help   # Gemini CLI help"
+echo "   bin/start        # Start monitoring"

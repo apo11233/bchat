@@ -97,6 +97,10 @@ User Input → bchat → gemini_wrapper.sh → gemini CLI → Output + Logging
 ```bash
 ./bchat -p "Explain quantum computing"
 ./bchat -p "Help debug this error: [error details]"
+
+# IMPORTANT: Use quotes for prompts with spaces or special characters.
+# The shell uses spaces to separate arguments, so quotes group your prompt into a single argument.
+./bchat -p "Analyze this project and suggest three improvements."
 ```
 
 ### Project Analysis

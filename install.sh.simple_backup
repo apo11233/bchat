@@ -1,0 +1,46 @@
+#!/bin/bash
+# bchat Installation Script with Auto-Detection
+
+set -e
+
+print_status() {
+    echo "📦 bchat: $1"
+}
+
+print_status "Starting bchat installation..."
+
+# Create virtual environment
+if [ ! -d "dev/venv" ]; then
+    print_status "Creating Python virtual environment..."
+    python3 -m venv dev/venv
+fi
+
+# Install dependencies
+print_status "Installing Python dependencies..."
+source dev/venv/bin/activate
+pip install -r requirements.txt
+
+# Make scripts executable
+print_status "Setting up executable permissions..."
+chmod +x bin/bchat bin/rchat bin/runchat bin/start bin/bchat-status
+chmod +x config/wrappers/*.sh
+
+print_status "Installation completed successfully!"
+
+# Run auto-detection and configuration
+print_status ""
+print_status "🔍 Auto-detecting your AI setup..."
+
+if [ -f "core/src/auto_detect.py" ]; then
+    python3 core/src/auto_detect.py
+else
+    print_status "⚠️  Auto-detection not available"
+fi
+
+print_status ""
+print_status "🚀 Next steps:"
+print_status "1. Configure your API key in .env (copy from .env.example)"
+print_status "2. Run: ./bchat --status"
+print_status "3. Start using: ./bchat"
+print_status ""
+print_status "📖 For detailed usage, see: README.md"

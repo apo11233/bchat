@@ -1,0 +1,36 @@
+{
+  "id": "claude_20250809_033517",
+  "timestamp": "2025-08-09T03:35:17.809060",
+  "stage": "stage_03_context_awareness",
+  "ai_source": "claude",
+  "session_id": "claude_20250809_033517",
+  "original_prompt": "what were the last tasks claude completed and what functions were defined?",
+  "final_prompt": "what were the last tasks claude completed and what functions were defined?",
+  "content_hash": "9a3b73f9bae65bf5a32c80c75607fd4c",
+  "keywords": [
+    "Claude's task history",
+    "Defined functions"
+  ],
+  "summary": "The user is inquiring about the last tasks completed by Claude and the functions that were defined.",
+  "sections": [
+    {
+      "title": "Key Achievements",
+      "type": "list",
+      "items": []
+    },
+    {
+      "title": "Errors",
+      "type": "list",
+      "items": []
+    },
+    {
+      "title": "Configurations",
+      "type": "list",
+      "items": []
+    }
+  ],
+  "metadata": {
+    "processed_at": "2025-08-09T03:35:17.809147",
+    "content_length": 74
+  }
+}

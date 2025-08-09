@@ -1,0 +1,1 @@
+/Users/admin/Documents/Developer/bchat/core/install.sh

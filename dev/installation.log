@@ -49,3 +49,162 @@ Directories created:
 
 [2025-08-08 09:54:51] [SUCCESS] bchat is ready to use!
 [2025-08-08 09:54:51] [INFO] Installation details logged to: installation.log
+[2025-08-09 01:23:17] Starting bchat installation (v1.0.0)...
+[2025-08-09 01:23:17] Installation started by user: admin
+[2025-08-09 01:23:17] Installation directory: /Users/admin/Documents/Developer/bchat
+[2025-08-09 01:23:17] Checking system dependencies...
+[2025-08-09 01:23:17] Found Python version: 3.13
+[2025-08-09 01:23:17] Dependencies check completed
+[2025-08-09 01:23:17] Setting up directory structure...
+[2025-08-09 01:23:17] Created directory: /Users/admin/Documents/Developer/bchat/data/chats
+[2025-08-09 01:23:17] Created directory: /Users/admin/Documents/Developer/bchat/data/logs
+[2025-08-09 01:23:17] Created directory: /Users/admin/Documents/Developer/bchat/dev
+[2025-08-09 01:23:17] Directory structure setup completed
+[2025-08-09 01:23:17] Setting up Python virtual environment...
+[2025-08-09 01:23:17] Virtual environment already exists - skipping creation
+[2025-08-09 01:23:17] Setting up file permissions...
+[2025-08-09 01:23:17] Made executable: /Users/admin/Documents/Developer/bchat/bin/bchat
+[2025-08-09 01:23:17] Made executable: /Users/admin/Documents/Developer/bchat/bin/bchat-status
+[2025-08-09 01:23:17] Made executable: /Users/admin/Documents/Developer/bchat/config/wrappers/claude_wrapper.sh
+[2025-08-09 01:23:17] Made executable: /Users/admin/Documents/Developer/bchat/config/wrappers/gemini_wrapper.sh
+[2025-08-09 01:23:17] File permissions setup completed
+[2025-08-09 01:23:17] 🔍 Running auto-detection and configuration...
+[2025-08-09 01:23:25] Ran auto-detection system
+[2025-08-09 01:23:25] Verifying installation...
+[2025-08-09 01:23:25] Main executable verified: bchat
+[2025-08-09 01:23:25] Status checker available
+[2025-08-09 01:23:25] Installation verification completed
+[2025-08-09 01:23:25] Installation completed successfully!
+[2025-08-09 01:23:25] 
+[2025-08-09 01:23:25] 🚀 Installation Summary:
+[2025-08-09 01:23:25]   📁 Project directory: /Users/admin/Documents/Developer/bchat
+[2025-08-09 01:23:25]   🐍 Virtual environment: /Users/admin/Documents/Developer/bchat/dev/venv
+[2025-08-09 01:23:25]   📊 Installation log: /Users/admin/Documents/Developer/bchat/dev/installation.log
+[2025-08-09 01:23:25] 
+[2025-08-09 01:23:25] 🎯 Next steps:
+[2025-08-09 01:23:25] 1. Configure your API key: cp .env.example .env (then edit .env)
+[2025-08-09 01:23:25] 2. Check system status: ./bchat --status
+[2025-08-09 01:23:25] 3. Start using bchat: ./bchat
+[2025-08-09 01:23:25] 
+[2025-08-09 01:23:25] 📖 For detailed usage, see: README.md
+[2025-08-09 01:23:25] Installation completed successfully
+[2025-08-09 01:26:36] Starting bchat installation (v1.0.0)...
+[2025-08-09 01:26:36] Installation started by user: admin
+[2025-08-09 01:26:36] Installation directory: /Users/admin/Documents/Developer/bchat
+[2025-08-09 01:26:36] Checking system dependencies...
+[2025-08-09 01:26:36] Found Python version: 3.13
+[2025-08-09 01:26:36] Dependencies check completed
+[2025-08-09 01:26:36] Setting up directory structure...
+[2025-08-09 01:26:36] Created directory: /Users/admin/Documents/Developer/bchat/data/chats
+[2025-08-09 01:26:36] Created directory: /Users/admin/Documents/Developer/bchat/data/logs
+[2025-08-09 01:26:36] Created directory: /Users/admin/Documents/Developer/bchat/dev
+[2025-08-09 01:26:36] Directory structure setup completed
+[2025-08-09 01:26:36] Setting up Python virtual environment...
+[2025-08-09 01:26:36] Virtual environment already exists - skipping creation
+[2025-08-09 01:26:36] Setting up file permissions...
+[2025-08-09 01:26:36] Made executable: /Users/admin/Documents/Developer/bchat/bin/bchat
+[2025-08-09 01:26:36] Made executable: /Users/admin/Documents/Developer/bchat/bin/bchat-status
+[2025-08-09 01:26:36] Made executable: /Users/admin/Documents/Developer/bchat/config/wrappers/claude_wrapper.sh
+[2025-08-09 01:26:36] Made executable: /Users/admin/Documents/Developer/bchat/config/wrappers/gemini_wrapper.sh
+[2025-08-09 01:26:36] File permissions setup completed
+[2025-08-09 01:26:36] 🔍 Running auto-detection and configuration...
+[2025-08-09 01:26:41] Ran auto-detection system
+[2025-08-09 01:26:41] Verifying installation...
+[2025-08-09 01:26:41] Main executable verified: bchat
+[2025-08-09 01:26:41] Status checker available
+[2025-08-09 01:26:41] Installation verification completed
+[2025-08-09 01:26:41] Installation completed successfully!
+[2025-08-09 01:26:41] 
+[2025-08-09 01:26:41] 🚀 Installation Summary:
+[2025-08-09 01:26:41]   📁 Project directory: /Users/admin/Documents/Developer/bchat
+[2025-08-09 01:26:41]   🐍 Virtual environment: /Users/admin/Documents/Developer/bchat/dev/venv
+[2025-08-09 01:26:41]   📊 Installation log: /Users/admin/Documents/Developer/bchat/dev/installation.log
+[2025-08-09 01:26:41] 
+[2025-08-09 01:26:41] 🎯 Next steps:
+[2025-08-09 01:26:41] 1. Configure your API key: cp .env.example .env (then edit .env)
+[2025-08-09 01:26:41] 2. Check system status: ./bchat --status
+[2025-08-09 01:26:41] 3. Start using bchat: ./bchat
+[2025-08-09 01:26:41] 
+[2025-08-09 01:26:41] 📖 For detailed usage, see: README.md
+[2025-08-09 01:26:41] Installation completed successfully
+[2025-08-09 01:28:08] Starting bchat installation (v1.0.0)...
+[2025-08-09 01:28:08] Installation started by user: admin
+[2025-08-09 01:28:08] Installation directory: /Users/admin/Documents/Developer/bchat
+[2025-08-09 01:28:08] Checking system dependencies...
+[2025-08-09 01:28:08] Found Python version: 3.13
+[2025-08-09 01:28:08] Dependencies check completed
+[2025-08-09 01:28:08] Setting up directory structure...
+[2025-08-09 01:28:08] Created directory: /Users/admin/Documents/Developer/bchat/data/chats
+[2025-08-09 01:28:08] Created directory: /Users/admin/Documents/Developer/bchat/data/logs
+[2025-08-09 01:28:08] Created directory: /Users/admin/Documents/Developer/bchat/dev
+[2025-08-09 01:28:08] Directory structure setup completed
+[2025-08-09 01:28:08] Setting up Python virtual environment...
+[2025-08-09 01:28:08] Virtual environment already exists - skipping creation
+[2025-08-09 01:28:08] Setting up file permissions...
+[2025-08-09 01:28:09] Made executable: /Users/admin/Documents/Developer/bchat/bin/bchat
+[2025-08-09 01:28:09] Made executable: /Users/admin/Documents/Developer/bchat/bin/bchat-status
+[2025-08-09 01:28:09] Made executable: /Users/admin/Documents/Developer/bchat/config/wrappers/claude_wrapper.sh
+[2025-08-09 01:28:09] Made executable: /Users/admin/Documents/Developer/bchat/config/wrappers/gemini_wrapper.sh
+[2025-08-09 01:28:09] File permissions setup completed
+[2025-08-09 01:28:09] 🔍 Running auto-detection and configuration...
+[2025-08-09 01:28:13] Ran auto-detection system
+[2025-08-09 01:28:13] Verifying installation...
+[2025-08-09 01:28:13] Main executable verified: bchat
+[2025-08-09 01:28:13] Status checker available
+[2025-08-09 01:28:13] Installation verification completed
+[2025-08-09 01:28:13] Installation completed successfully!
+[2025-08-09 01:28:13] 
+[2025-08-09 01:28:13] 🚀 Installation Summary:
+[2025-08-09 01:28:13]   📁 Project directory: /Users/admin/Documents/Developer/bchat
+[2025-08-09 01:28:13]   🐍 Virtual environment: /Users/admin/Documents/Developer/bchat/dev/venv
+[2025-08-09 01:28:13]   📊 Installation log: /Users/admin/Documents/Developer/bchat/dev/installation.log
+[2025-08-09 01:28:13] 
+[2025-08-09 01:28:13] 🎯 Next steps:
+[2025-08-09 01:28:13] 1. Configure your API key: cp .env.example .env (then edit .env)
+[2025-08-09 01:28:13] 2. Check system status: ./bchat --status
+[2025-08-09 01:28:13] 3. Start using bchat: ./bchat
+[2025-08-09 01:28:13] 
+[2025-08-09 01:28:13] 📖 For detailed usage, see: README.md
+[2025-08-09 01:28:13] Installation completed successfully
+[2025-08-09 01:30:32] Starting bchat installation (v1.0.0)...
+[2025-08-09 01:30:32] Installation started by user: admin
+[2025-08-09 01:30:32] Installation directory: /Users/admin/Documents/Developer/bchat
+[2025-08-09 01:30:32] Checking system dependencies...
+[2025-08-09 01:30:32] Found Python version: 3.13
+[2025-08-09 01:30:32] Dependencies check completed
+[2025-08-09 01:30:32] Setting up directory structure...
+[2025-08-09 01:30:32] Created directory: /Users/admin/Documents/Developer/bchat/data/chats
+[2025-08-09 01:30:32] Created directory: /Users/admin/Documents/Developer/bchat/data/logs
+[2025-08-09 01:30:32] Created directory: /Users/admin/Documents/Developer/bchat/dev
+[2025-08-09 01:30:32] Directory structure setup completed
+[2025-08-09 01:30:32] Setting up Python virtual environment...
+[2025-08-09 01:30:32] Virtual environment already exists - skipping creation
+[2025-08-09 01:30:32] Setting up file permissions...
+[2025-08-09 01:30:32] Made executable: /Users/admin/Documents/Developer/bchat/bin/bchat
+[2025-08-09 01:30:32] Made executable: /Users/admin/Documents/Developer/bchat/bin/bchat-status
+[2025-08-09 01:30:32] Made executable: /Users/admin/Documents/Developer/bchat/config/wrappers/claude_wrapper.sh
+[2025-08-09 01:30:32] Made executable: /Users/admin/Documents/Developer/bchat/config/wrappers/gemini_wrapper.sh
+[2025-08-09 01:30:32] File permissions setup completed
+[2025-08-09 01:30:32] Creating symbolic link for bchat command...
+[2025-08-09 01:30:32] This script needs sudo access to create a symbolic link in /usr/local/bin.
+[2025-08-09 01:30:48] Symbolic link created successfully: /usr/local/bin/bchat -> /Users/admin/Documents/Developer/bchat/bin/bchat
+[2025-08-09 01:30:48] 🔍 Running auto-detection and configuration...
+[2025-08-09 01:30:54] Ran auto-detection system
+[2025-08-09 01:30:54] Verifying installation...
+[2025-08-09 01:30:54] Main executable verified: bchat
+[2025-08-09 01:30:54] Status checker available
+[2025-08-09 01:30:54] Installation verification completed
+[2025-08-09 01:30:54] Installation completed successfully!
+[2025-08-09 01:30:54] 
+[2025-08-09 01:30:54] 🚀 Installation Summary:
+[2025-08-09 01:30:54]   📁 Project directory: /Users/admin/Documents/Developer/bchat
+[2025-08-09 01:30:54]   🐍 Virtual environment: /Users/admin/Documents/Developer/bchat/dev/venv
+[2025-08-09 01:30:54]   📊 Installation log: /Users/admin/Documents/Developer/bchat/dev/installation.log
+[2025-08-09 01:30:54] 
+[2025-08-09 01:30:54] 🎯 Next steps:
+[2025-08-09 01:30:54] 1. Configure your API key: cp .env.example .env (then edit .env)
+[2025-08-09 01:30:54] 2. Check system status: ./bchat --status
+[2025-08-09 01:30:54] 3. Start using bchat: ./bchat
+[2025-08-09 01:30:54] 
+[2025-08-09 01:30:54] 📖 For detailed usage, see: README.md
+[2025-08-09 01:30:54] Installation completed successfully

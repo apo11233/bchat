@@ -34,3 +34,188 @@
 2025-08-08 11:30:42,871 - root - ERROR - Failed to parse API response as JSON: Expecting value: line 1 column 1 (char 0)
 2025-08-08 11:30:42,874 - root - INFO - Processed Claude content - Session: claude_20250808_113042
 2025-08-08 11:30:42,874 - root - INFO - Manual consolidation completed
+2025-08-08 22:02:46,660 - root - INFO - Chat monitor initialized
+2025-08-08 22:02:46,660 - root - INFO - Triggering manual consolidation for 2025-08-08
+2025-08-08 22:02:46,661 - root - INFO - Processing raw log content from gemini_current_day_raw.log
+2025-08-08 22:02:50,829 - root - ERROR - Failed to parse API response as JSON: Expecting value: line 1 column 1 (char 0)
+2025-08-08 22:02:50,833 - root - INFO - Processed Gemini content - Session: gemini_20250808_220250
+2025-08-08 22:02:50,834 - root - INFO - Processing raw log content from claude_current_day_raw.log
+2025-08-08 22:02:55,827 - root - ERROR - Failed to parse API response as JSON: Expecting value: line 1 column 1 (char 0)
+2025-08-08 22:02:55,829 - root - INFO - Processed Claude content - Session: claude_20250808_220255
+2025-08-08 22:02:55,829 - root - INFO - Manual consolidation completed
+2025-08-08 22:38:54,439 - root - INFO - Chat monitor initialized
+2025-08-08 22:38:54,439 - root - INFO - Watching directory: /Users/admin/Documents/Developer/bchat/data/chats
+2025-08-08 22:38:54,441 - root - INFO - Chat monitoring started
+2025-08-08 23:15:25,856 - root - INFO - Chat monitor initialized
+2025-08-08 23:15:25,856 - root - INFO - Triggering manual consolidation for 2025-08-08
+2025-08-08 23:15:25,856 - root - INFO - Processing raw log content from gemini_current_day_raw.log
+2025-08-08 23:15:31,776 - root - INFO - Processed Gemini content - Session: gemini_20250808_231531
+2025-08-08 23:15:31,777 - root - INFO - Processing raw log content from claude_current_day_raw.log
+2025-08-08 23:15:36,155 - root - INFO - Processed Claude content - Session: claude_20250808_231536
+2025-08-08 23:15:36,156 - root - INFO - Manual consolidation completed
+2025-08-08 23:26:28,882 - root - INFO - Chat monitor initialized
+2025-08-08 23:26:28,883 - root - INFO - Triggering manual consolidation for 2025-08-08
+2025-08-08 23:26:28,883 - root - INFO - Processing raw log content from gemini_current_day_raw.log
+2025-08-08 23:26:34,614 - root - INFO - Processed Gemini content - Session: gemini_20250808_232634
+2025-08-08 23:26:34,614 - root - INFO - Processing raw log content from claude_current_day_raw.log
+2025-08-08 23:26:39,757 - root - INFO - Processed Claude content - Session: claude_20250808_232639
+2025-08-08 23:26:39,757 - root - INFO - Manual consolidation completed
+2025-08-08 23:30:52,194 - root - INFO - Chat monitor initialized
+2025-08-08 23:30:52,194 - root - INFO - Triggering manual consolidation for 2025-08-08
+2025-08-08 23:30:52,194 - root - INFO - Processing raw log content from gemini_current_day_raw.log
+2025-08-08 23:30:56,911 - root - INFO - Processed Gemini content - Session: gemini_20250808_233056
+2025-08-08 23:30:56,912 - root - INFO - Processing raw log content from claude_current_day_raw.log
+2025-08-08 23:31:02,282 - root - INFO - Processed Claude content - Session: claude_20250808_233102
+2025-08-08 23:31:02,282 - root - INFO - Manual consolidation completed
+2025-08-08 23:31:08,648 - root - INFO - Chat monitor initialized
+2025-08-08 23:31:08,648 - root - INFO - Triggering manual consolidation for 2025-08-08
+2025-08-08 23:31:08,648 - root - INFO - Processing raw log content from gemini_current_day_raw.log
+2025-08-08 23:31:14,271 - root - INFO - Processed Gemini content - Session: gemini_20250808_233114
+2025-08-08 23:31:14,271 - root - INFO - Processing raw log content from claude_current_day_raw.log
+2025-08-08 23:31:18,840 - root - INFO - Processed Claude content - Session: claude_20250808_233118
+2025-08-08 23:31:18,840 - root - INFO - Manual consolidation completed
+2025-08-08 23:32:04,957 - root - INFO - Chat monitor initialized
+2025-08-08 23:32:04,957 - root - INFO - Triggering manual consolidation for 2025-08-08
+2025-08-08 23:32:04,958 - root - INFO - Processing raw log content from gemini_current_day_raw.log
+2025-08-08 23:32:09,153 - root - INFO - Processed Gemini content - Session: gemini_20250808_233209
+2025-08-08 23:32:09,153 - root - INFO - Processing raw log content from claude_current_day_raw.log
+2025-08-08 23:32:14,012 - root - INFO - Processed Claude content - Session: claude_20250808_233214
+2025-08-08 23:32:14,012 - root - INFO - Manual consolidation completed
+2025-08-08 23:32:16,359 - root - INFO - Chat monitor initialized
+2025-08-08 23:32:16,359 - root - INFO - Triggering manual consolidation for 2025-08-08
+2025-08-08 23:32:16,359 - root - INFO - Processing raw log content from gemini_current_day_raw.log
+2025-08-08 23:32:22,279 - root - INFO - Processed Gemini content - Session: gemini_20250808_233222
+2025-08-08 23:32:22,279 - root - INFO - Processing raw log content from claude_current_day_raw.log
+2025-08-08 23:32:25,340 - root - INFO - Processed Claude content - Session: claude_20250808_233225
+2025-08-08 23:32:25,341 - root - INFO - Manual consolidation completed
+2025-08-08 23:35:08,973 - root - INFO - Chat monitor initialized
+2025-08-08 23:35:08,973 - root - INFO - Watching directory: /Users/admin/Documents/Developer/bchat/data/chats
+2025-08-08 23:35:08,975 - root - INFO - Chat monitoring started
+2025-08-08 23:38:11,772 - root - INFO - Chat monitor initialized
+2025-08-08 23:38:11,772 - root - INFO - Triggering manual consolidation for 2025-08-08
+2025-08-08 23:38:11,772 - root - INFO - Processing raw log content from gemini_current_day_raw.log
+2025-08-08 23:38:16,698 - root - INFO - Processed Gemini content - Session: gemini_20250808_233816
+2025-08-08 23:38:16,698 - root - INFO - Processing raw log content from claude_current_day_raw.log
+2025-08-08 23:38:21,189 - root - INFO - Processed Claude content - Session: claude_20250808_233821
+2025-08-08 23:38:21,189 - root - INFO - Manual consolidation completed
+2025-08-08 23:48:07,717 - root - INFO - Starting in daemon mode...
+2025-08-08 23:48:07,722 - root - ERROR - Failed to create PID file: [Errno 30] Read-only file system: 'bchat.pid'
+2025-08-08 23:48:07,724 - root - INFO - Chat monitor initialized
+2025-08-08 23:48:07,725 - root - INFO - Watching directory: /Users/admin/Documents/Developer/bchat/data/chats
+2025-08-08 23:48:07,728 - root - INFO - Chat monitoring started
+2025-08-08 23:48:26,004 - root - INFO - Starting in daemon mode...
+2025-08-08 23:48:26,009 - root - INFO - PID file created: /Users/admin/Documents/Developer/bchat/bchat.pid
+2025-08-08 23:48:26,011 - root - INFO - Chat monitor initialized
+2025-08-08 23:48:26,012 - root - INFO - Watching directory: /Users/admin/Documents/Developer/bchat/data/chats
+2025-08-08 23:48:26,015 - root - INFO - Chat monitoring started
+2025-08-08 23:48:37,387 - root - INFO - Chat monitor initialized
+2025-08-08 23:48:37,387 - root - INFO - Triggering manual consolidation for 2025-08-08
+2025-08-08 23:48:37,388 - root - INFO - Processing raw log content from gemini_current_day_raw.log
+2025-08-08 23:48:42,158 - root - INFO - Processed Gemini content - Session: gemini_20250808_234842
+2025-08-08 23:48:42,158 - root - INFO - Processing raw log content from claude_current_day_raw.log
+2025-08-08 23:48:47,072 - root - INFO - Processed Claude content - Session: claude_20250808_234847
+2025-08-08 23:48:47,072 - root - INFO - Manual consolidation completed
+2025-08-08 23:49:38,705 - root - INFO - Received signal 15, shutting down...
+2025-08-08 23:49:38,706 - root - INFO - Chat monitoring stopped
+2025-08-08 23:49:38,707 - root - INFO - PID file removed: /Users/admin/Documents/Developer/bchat/bchat.pid
+2025-08-08 23:49:59,752 - root - INFO - Received signal 15, shutting down...
+2025-08-08 23:49:59,753 - root - INFO - Chat monitoring stopped
+2025-08-08 23:50:09,998 - root - INFO - Starting in daemon mode...
+2025-08-08 23:50:10,002 - root - INFO - PID file created: /Users/admin/Documents/Developer/bchat/bchat.pid
+2025-08-08 23:50:10,005 - root - INFO - Chat monitor initialized
+2025-08-08 23:50:10,005 - root - INFO - Watching directory: /Users/admin/Documents/Developer/bchat/data/chats
+2025-08-08 23:50:10,007 - root - INFO - Chat monitoring started
+2025-08-08 23:50:23,073 - root - INFO - Chat monitor initialized
+2025-08-08 23:50:23,073 - root - INFO - Triggering manual consolidation for 2025-08-08
+2025-08-08 23:50:23,074 - root - INFO - Processing raw log content from gemini_current_day_raw.log
+2025-08-08 23:50:27,695 - root - INFO - Processed Gemini content - Session: gemini_20250808_235027
+2025-08-08 23:50:27,695 - root - INFO - Processing raw log content from claude_current_day_raw.log
+2025-08-08 23:50:32,290 - root - INFO - Processed Claude content - Session: claude_20250808_235032
+2025-08-08 23:50:32,290 - root - INFO - Manual consolidation completed
+2025-08-08 23:50:34,676 - root - INFO - Chat monitor initialized
+2025-08-08 23:50:34,676 - root - INFO - Triggering manual consolidation for 2025-08-08
+2025-08-08 23:50:34,676 - root - INFO - Processing raw log content from gemini_current_day_raw.log
+2025-08-08 23:50:42,472 - root - INFO - Processed Gemini content - Session: gemini_20250808_235042
+2025-08-08 23:50:42,472 - root - INFO - Processing raw log content from claude_current_day_raw.log
+2025-08-08 23:50:47,237 - root - INFO - Processed Claude content - Session: claude_20250808_235047
+2025-08-08 23:50:47,238 - root - INFO - Manual consolidation completed
+2025-08-08 23:56:20,789 - root - INFO - Chat monitor initialized
+2025-08-08 23:56:20,789 - root - INFO - Triggering manual consolidation for 2025-08-08
+2025-08-08 23:56:20,789 - root - INFO - Processing raw log content from gemini_current_day_raw.log
+2025-08-08 23:56:25,027 - root - INFO - Processed Gemini content - Session: gemini_20250808_235625
+2025-08-08 23:56:25,027 - root - INFO - Processing raw log content from claude_current_day_raw.log
+2025-08-08 23:56:30,071 - root - INFO - Processed Claude content - Session: claude_20250808_235630
+2025-08-08 23:56:30,072 - root - INFO - Manual consolidation completed
+2025-08-09 01:33:21,521 - root - INFO - Trigger word detected in Gemini log, processing immediately
+2025-08-09 01:33:25,647 - root - INFO - Processed Gemini content - Session: gemini_20250809_013325
+2025-08-09 01:35:36,189 - root - INFO - Trigger word detected in Gemini log, processing immediately
+2025-08-09 01:35:39,253 - root - INFO - Processed Gemini content - Session: gemini_20250809_013539
+2025-08-09 02:32:33,054 - root - ERROR - A fatal error occurred: 'str' object has no attribute 'exists'
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Developer/bchat/core/src/chat_monitor.py", line 248, in main
+    processor = ChatProcessor(args.config)
+  File "/Users/admin/Documents/Developer/bchat/core/src/chat_monitor.py", line 90, in __init__
+    self.index_searcher = ChatIndexSearcher(self.path_manager.get_chat_index_path())
+                          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/admin/Documents/Developer/bchat/core/src/utils/context_engine.py", line 48, in __init__
+    self.index_data = self._load_index()
+                      ~~~~~~~~~~~~~~~~^^
+  File "/Users/admin/Documents/Developer/bchat/core/src/utils/context_engine.py", line 52, in _load_index
+    if not self.index_path.exists():
+           ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'exists'
+2025-08-09 02:35:08,915 - root - INFO - ChatProcessor initialized with Context-Aware Engine
+2025-08-09 02:35:08,915 - root - INFO - Processing prompt for gemini: 'what did we say about listing files recursively in python?'
+2025-08-09 02:35:08,916 - root - INFO - Contextual query detected. Searching for relevant history...
+2025-08-09 02:35:08,916 - root - INFO - Found 1 relevant logs.
+2025-08-09 02:35:08,916 - root - INFO - Context injected into prompt.
+2025-08-09 02:35:16,151 - root - INFO - Successfully processed and saved new chat - Session: gemini_20250809_023516
+2025-08-09 02:46:06,845 - root - INFO - ChatProcessor initialized with Context-Aware Engine
+2025-08-09 02:46:06,845 - root - INFO - Processing prompt for gemini: 'what did we say about listing files recursively in python?'
+2025-08-09 02:46:06,845 - root - INFO - Contextual query detected. Searching for relevant history...
+2025-08-09 02:46:06,845 - root - INFO - Found 2 relevant logs.
+2025-08-09 02:46:06,846 - root - INFO - Context injected into prompt.
+2025-08-09 02:46:10,977 - root - INFO - Successfully processed and saved new chat - Session: gemini_20250809_024610
+2025-08-09 03:35:14,463 - root - INFO - ChatProcessor initialized with Context-Aware Engine
+2025-08-09 03:35:14,463 - root - INFO - Processing prompt for claude: 'what were the last tasks claude completed and what functions were defined?'
+2025-08-09 03:35:17,812 - root - INFO - Successfully processed and saved new chat - Session: claude_20250809_033517
+2025-08-09 03:37:23,577 - root - INFO - ChatProcessor initialized with Context-Aware Engine
+2025-08-09 03:37:23,577 - root - INFO - Processing prompt for claude: 'what were the last tasks claude completed and what functions were defined?'
+2025-08-09 03:37:26,415 - root - INFO - Successfully processed and saved new chat - Session: claude_20250809_033726
+2025-08-09 03:43:54,761 - root - INFO - ChatProcessor initialized with Context-Aware Engine
+2025-08-09 03:43:54,761 - root - INFO - Processing prompt for claude: 'what were the last tasks claude completed and what functions were defined?'
+2025-08-09 03:43:54,761 - root - INFO - Contextual query detected. Searching for relevant history...
+2025-08-09 03:43:54,762 - root - INFO - Context found. Injecting into prompt...
+2025-08-09 03:43:58,618 - root - INFO - Successfully processed and saved new chat - Session: claude_20250809_034358
+2025-08-09 04:09:22,501 - root - ERROR - A fatal error occurred: ContextExtractor.__init__() takes 2 positional arguments but 3 were given
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Developer/bchat/core/src/chat_monitor.py", line 247, in main
+    processor = ChatProcessor(args.config)
+  File "/Users/admin/Documents/Developer/bchat/core/src/chat_monitor.py", line 88, in __init__
+    self.context_extractor = ContextExtractor(self.path_manager.get_chats_dir(), self.path_manager.get_project_root())
+                             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ContextExtractor.__init__() takes 2 positional arguments but 3 were given
+2025-08-09 04:12:11,567 - root - INFO - ChatProcessor initialized with Deep Context Engine
+2025-08-09 04:12:11,567 - root - INFO - Processing prompt for claude: 'what does our project's CLAUDE.md file say about our goals?'
+2025-08-09 04:12:14,417 - root - INFO - Successfully processed and saved new chat - Session: claude_20250809_041214
+2025-08-09 04:16:01,059 - root - INFO - ChatProcessor initialized with Deep Context Engine
+2025-08-09 04:16:01,059 - root - INFO - Processing prompt for claude: 'what does our project's CLAUDE.md file say about our goals?'
+2025-08-09 04:16:03,878 - root - INFO - Successfully processed and saved new chat - Session: claude_20250809_041603
+2025-08-09 04:18:09,511 - root - INFO - ChatProcessor initialized with Deep Context Engine
+2025-08-09 04:18:09,511 - root - INFO - Processing prompt for claude: 'what did we say our goals were in the CLAUDE.md file?'
+2025-08-09 04:18:09,511 - root - INFO - Contextual query detected. Searching for relevant history...
+2025-08-09 04:18:09,512 - root - ERROR - Error processing prompt: name 'sys' is not defined
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Developer/bchat/core/src/chat_monitor.py", line 122, in process_prompt
+    claude_md_context = self.context_extractor.claude_md_parser.parse_hierarchy(self.path_manager.get_project_root())
+  File "/Users/admin/Documents/Developer/bchat/core/src/utils/context_engine.py", line 153, in parse_hierarchy
+    if sys.platform == "darwin":
+       ^^^
+NameError: name 'sys' is not defined. Did you forget to import 'sys'?
+2025-08-09 04:21:14,702 - root - INFO - ChatProcessor initialized with Deep Context Engine
+2025-08-09 04:21:14,703 - root - INFO - Processing prompt for claude: 'what does our project's CLAUDE.md file say about our goals?'
+2025-08-09 04:21:17,255 - root - INFO - Successfully processed and saved new chat - Session: claude_20250809_042117
+2025-08-09 04:57:12,142 - root - INFO - ChatProcessor initialized with Deep Context Engine
+2025-08-09 04:57:14,772 - root - INFO - Successfully processed and saved new chat - Session: claude_20250809_045714
+2025-08-09 04:59:34,031 - root - INFO - ChatProcessor initialized with Deep Context Engine
+2025-08-09 04:59:39,456 - root - INFO - Successfully processed and saved new chat - Session: claude_20250809_045939

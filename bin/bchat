@@ -1,29 +1,31 @@
 #!/bin/bash
-# Enhanced bchat - Chat backup and Gemini CLI wrapper
+# bchat - Context-Aware AI Chat Processor
 
-# Resolve the actual script directory (follow symlinks)
+# Resolve the project root directory
 SOURCE="${BASH_SOURCE[0]}"
-while [ -h "$SOURCE" ]; do
-    SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
-    SOURCE="$(readlink "$SOURCE")"
-    [[ $SOURCE != /* ]] && SOURCE="$SCRIPT_DIR/$SOURCE"
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
 done
-BIN_DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
-SCRIPT_DIR="$(cd -P "$BIN_DIR/.." && pwd)"
+SCRIPT_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
-# If no arguments provided, trigger chat backup/consolidation
-if [ $# -eq 0 ]; then
-    echo "🔄 Triggering chat backup and consolidation..."
-    
-    # Run chat monitor consolidation
-    if [ -x "$BIN_DIR/rchat" ]; then
-        "$BIN_DIR/rchat" --consolidate
-        echo "✅ Chat backup completed"
-    else
-        echo "❌ bchat monitor not found. Please run ./install.sh first."
-        exit 1
-    fi
+# Activate virtual environment
+VENV_PATH="$PROJECT_ROOT/dev/venv"
+if [ -f "$VENV_PATH/bin/activate" ]; then
+    source "$VENV_PATH/bin/activate"
 else
-    # Pass arguments to gemini wrapper for normal Gemini CLI usage
-    exec "$SCRIPT_DIR/config/wrappers/gemini_wrapper.sh" "$@"
+    echo "Warning: Virtual environment not found at $VENV_PATH" >&2
+fi
+
+PYTHON_EXEC="python3"
+MONITOR_SCRIPT="$PROJECT_ROOT/core/src/chat_monitor.py"
+
+# Handle status command
+if [ "$1" = "--status" ]; then
+    exec "$PROJECT_ROOT/bin/bchat-status"
+else
+    # All other arguments are passed to the python script
+    exec "$PYTHON_EXEC" "$MONITOR_SCRIPT" "$@"
 fi

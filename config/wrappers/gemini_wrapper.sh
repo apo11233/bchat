@@ -59,51 +59,68 @@ log_with_timestamp "INFO" "Session ID: $SESSION_ID"
 log_with_timestamp "INFO" "Log file: $GEMINI_LOG"
 log_with_timestamp "INFO" "Command: gemini-cli $*"
 
-# Create a named pipe for capturing both stdin and stdout
-PIPE_DIR="/tmp/gemini_wrapper_$$"
-mkdir -p "$PIPE_DIR"
-INPUT_PIPE="$PIPE_DIR/input"
-OUTPUT_PIPE="$PIPE_DIR/output"
-
-mkfifo "$INPUT_PIPE" "$OUTPUT_PIPE"
-
-# Function to log input
-log_input() {
-    while IFS= read -r line; do
-        log_with_timestamp "USER_INPUT" "$line"
-        echo "$line"
-    done
-}
-
-# Function to log output  
-log_output() {
-    while IFS= read -r line; do
-        log_with_timestamp "GEMINI_OUTPUT" "$line"
-        echo "$line"
-    done
-}
-
-# Background process to handle input logging
-tee >(log_input) < /dev/stdin > "$INPUT_PIPE" &
-INPUT_PID=$!
-
-# Background process to handle output logging
-log_output < "$OUTPUT_PIPE" &
-OUTPUT_PID=$!
-
-# Check if gemini exists, fallback to a simple echo for testing
-if command -v gemini &> /dev/null; then
-    gemini "$@" < "$INPUT_PIPE" | tee "$OUTPUT_PIPE"
-    GEMINI_EXIT_CODE=$?
+# If arguments are provided, run non-interactively
+if [ $# -gt 0 ]; then
+    log_with_timestamp "NON_INTERACTIVE_INPUT" "$*"
+    # Execute gemini and log its output line by line
+    if command -v gemini &> /dev/null; then
+        gemini "$@" | while IFS= read -r line; do
+            log_with_timestamp "GEMINI_OUTPUT" "$line"
+            echo "$line"
+        done
+        GEMINI_EXIT_CODE=${PIPESTATUS[0]}
+    else
+        log_with_timestamp "WARNING" "gemini command not found, using placeholder"
+        echo "Gemini CLI placeholder - install @google/gemini-cli for actual functionality"
+        GEMINI_EXIT_CODE=0
+    fi
 else
-    log_with_timestamp "WARNING" "gemini command not found, using placeholder"
-    echo "Gemini CLI placeholder - install @google/gemini-cli for actual functionality" | tee "$OUTPUT_PIPE"
-    GEMINI_EXIT_CODE=0
-fi
+    # Interactive mode with named pipes
+    PIPE_DIR="/tmp/gemini_wrapper_$"
+    mkdir -p "$PIPE_DIR"
+    INPUT_PIPE="$PIPE_DIR/input"
+    OUTPUT_PIPE="$PIPE_DIR/output"
 
-# Cleanup
-kill $INPUT_PID $OUTPUT_PID 2>/dev/null
-rm -rf "$PIPE_DIR"
+    mkfifo "$INPUT_PIPE" "$OUTPUT_PIPE"
+
+    # Function to log input
+    log_input() {
+        while IFS= read -r line; do
+            log_with_timestamp "USER_INPUT" "$line"
+            echo "$line"
+        done
+    }
+
+    # Function to log output  
+    log_output() {
+        while IFS= read -r line; do
+            log_with_timestamp "GEMINI_OUTPUT" "$line"
+            echo "$line"
+        done
+    }
+
+    # Background process to handle input logging
+    tee >(log_input) < /dev/stdin > "$INPUT_PIPE" &
+    INPUT_PID=$!
+
+    # Background process to handle output logging
+    log_output < "$OUTPUT_PIPE" &
+    OUTPUT_PID=$!
+
+    # Check if gemini exists, fallback to a simple echo for testing
+    if command -v gemini &> /dev/null; then
+        gemini "$@" < "$INPUT_PIPE" | tee "$OUTPUT_PIPE"
+        GEMINI_EXIT_CODE=$?
+    else
+        log_with_timestamp "WARNING" "gemini command not found, using placeholder"
+        echo "Gemini CLI placeholder - install @google/gemini-cli for actual functionality" | tee "$OUTPUT_PIPE"
+        GEMINI_EXIT_CODE=0
+    fi
+
+    # Cleanup for interactive mode
+    kill $INPUT_PID $OUTPUT_PID 2>/dev/null
+    rm -rf "$PIPE_DIR"
+fi
 
 # Log session completion
 log_with_timestamp "INFO" "Gemini CLI exited with code: $GEMINI_EXIT_CODE"

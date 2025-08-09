@@ -1,0 +1,36 @@
+{
+  "id": "claude_20250809_034358",
+  "timestamp": "2025-08-09T03:43:58.616028",
+  "stage": "stage_03_context_awareness",
+  "ai_source": "claude",
+  "session_id": "claude_20250809_034358",
+  "original_prompt": "what were the last tasks claude completed and what functions were defined?",
+  "final_prompt": "Based on the following context from our previous conversations:\n\n---\n--- Context from session claude_20250809_033517 (2025-08-09T03:35:17.809060) ---\nSummary: The user is inquiring about the last tasks completed by Claude and the functions that were defined.\nDecisions: []\n---\n\n\n---\n--- Context from session claude_20250809_033726 (2025-08-09T03:37:26.412665) ---\nSummary: The user is inquiring about Claude's previously completed tasks and any functions that were defined.\nDecisions: []\n---\n\nClaude defined the following functions: ['another_function', 'my_function']\nClaude recently completed the following tasks: ['Design the new parser.']\n\nPlease answer the user's question: \"what were the last tasks claude completed and what functions were defined?",
+  "content_hash": "580ce790f671a2c3c3ba4c11fa4614f4",
+  "keywords": [
+    "Claude's completed tasks",
+    "Claude's defined functions"
+  ],
+  "summary": "The user inquired about Claude's last completed tasks and defined functions. Claude's last completed task was 'Design the new parser.', and the defined functions were 'another_function' and 'my_function'.",
+  "sections": [
+    {
+      "title": "Key Achievements",
+      "type": "list",
+      "items": []
+    },
+    {
+      "title": "Errors",
+      "type": "list",
+      "items": []
+    },
+    {
+      "title": "Configurations",
+      "type": "list",
+      "items": []
+    }
+  ],
+  "metadata": {
+    "processed_at": "2025-08-09T03:43:58.616140",
+    "content_length": 754
+  }
+}

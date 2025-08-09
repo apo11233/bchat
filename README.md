@@ -1,6 +1,6 @@
 # 🤖 AI CLI Chat Logger (bchat)
 
-**Universal AI Conversation Intelligence System**
+**AI Conversation Intelligence with Technical Context Preservation**
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/Nyrk0/bchat/releases)
 [![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey.svg)](#installation)
@@ -8,7 +8,9 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Contributors](https://img.shields.io/github/contributors/Nyrk0/bchat.svg)](https://github.com/Nyrk0/bchat/graphs/contributors)
 
-A lightweight, fully local Python utility for capturing AI-powered CLI chat logs with intelligent semantic processing. Features dual AI provider support (Claude/Gemini), automatic chat analysis, and structured JSON backup generation. Designed for simplicity with professional-grade organization and no external platform dependencies.
+**AI Conversation Intelligence with Technical Context Preservation**
+
+A lightweight, fully local Python utility that captures AI-powered CLI chat logs with intelligent semantic processing **and preserves the crucial technical "how" and "why"** that future development sessions need. Features dual AI provider support (Claude/Gemini), automatic chat analysis with implementation details, and structured JSON backups that maintain technical continuity. Simple 3-step setup with professional-grade organization and no external platform dependencies.
 
 ## 📋 Development Guidelines
 **For Developers and AI Contributors**: All development work must follow the mandatory directives in [`dev_directives/general.md`](dev_directives/general.md). These guidelines ensure code quality, security, and consistency across the project.
@@ -17,20 +19,22 @@ A lightweight, fully local Python utility for capturing AI-powered CLI chat logs
 
 ## 🎯 **Why bchat?**
 
+- **🧠 Technical Context Preservation**: Captures the crucial "how" and "why" that future development sessions need
 - **🔒 Fully Local**: No data leaves your machine
-- **🚀 Zero Config**: Works out of the box with one command
+- **⚡ Simple Setup**: Ready in 3 steps - clone, add API key, install
 - **🌍 Universal Access**: `bchat` command works from anywhere in your workspace
-- **🤖 AI-Smart**: Intelligent chat analysis and summarization
+- **🤖 AI-Smart**: Intelligent chat analysis with implementation detail extraction
 - **📦 Lightweight**: Minimal dependencies, maximum functionality
 
 ---
 
 ## ✨ Features
 
+- 🧠 **Technical Context Intelligence**: Preserves implementation details, code changes, and architectural decisions that enable seamless development continuity
 - 🔍 **Real-time Monitoring**: Automatically watches and processes AI chat logs
 - 🧠 **Dual AI Providers**: Choose between Claude or Gemini APIs for intelligent analysis
-- 📊 **Structured Data**: Creates machine-readable JSON indexes with metadata
-- 🔄 **Daily Consolidation**: Merges multiple chat files into organized single files
+- 📊 **Structured Data**: Creates machine-readable JSON indexes with technical metadata and implementation tracking
+- 🔄 **Daily Consolidation**: Merges multiple chat files into organized single files with context preservation
 - 🚀 **Universal Access**: `bchat` command works from any directory in your workspace
 - 💬 **Multi-AI Support**: Compatible with Claude Code, Gemini CLI, and extensible to other AI tools
 - 🛡️ **Resilient Architecture**: Circuit breaker patterns, retry logic, and graceful error handling
@@ -42,9 +46,9 @@ A lightweight, fully local Python utility for capturing AI-powered CLI chat logs
 
 ### System Requirements
 - **Python 3.8+** (required)
-- **Node.js 16+** (optional, for Gemini CLI)
+- **AI API Key** (required for intelligent processing): Anthropic API key for Claude OR Google API key for Gemini
+- **Node.js 16+** (optional, for Gemini CLI integration)
 - **Git** (for installation)
-- **API key** (optional, for AI analysis): Google API key for Gemini OR Anthropic API key for Claude
 
 ### Installation (macOS/Linux)
 
@@ -54,27 +58,32 @@ A lightweight, fully local Python utility for capturing AI-powered CLI chat logs
    cd bchat
    ```
 
-2. **Run the installer:**
+2. **Configure your API key:**
+   ```bash
+   cp .env.example .env
+   # Edit .env and add your API key:
+   # For Claude (recommended): ANTHROPIC_API_KEY=your_anthropic_api_key_here
+   # For Gemini: GOOGLE_API_KEY=your_google_api_key_here
+   ```
+
+3. **Run the installer:**
    ```bash
    ./install.sh
    ```
 
-3. **Configure API keys (optional):**
-   ```bash
-   cp .env.example .env
-   # Edit .env and add your preferred API key:
-   # For Gemini: GOOGLE_API_KEY=your_google_api_key_here
-   # For Claude: ANTHROPIC_API_KEY=your_anthropic_api_key_here
-   ```
-
 4. **Start using bchat:**
    ```bash
-   # Backup current chat conversation
-   bchat
+   # Check system status (works without API key)
+   ./bchat --status
    
-   # Use Gemini CLI with logging
-   bchat -p "Explain quantum computing"
+   # Backup and process chat conversation (requires API key)
+   ./bchat
+   
+   # Use Gemini CLI with logging (requires API key)
+   ./bchat -p "Explain quantum computing"
    ```
+
+> **💡 Note**: Basic commands like `--status` work immediately. Intelligent processing features require an API key configured in step 2.
 
 ### Windows Support
 Windows installation is not yet supported. **[Contributions for Windows installer scripts are highly welcomed!](CONTRIBUTING.md#windows-support-most-wanted)** The core Python functionality should work on Windows with manual setup.
@@ -120,25 +129,62 @@ bchat --help                                  # See all Gemini options
 
 ## 📁 What Gets Created
 
-After installation, your workspace will have:
+When you clone from GitHub:
+```bash
+cd /their/workspace/
+git clone https://github.com/Nyrk0/bchat.git
+```
 
+You will get:
 ```
-your-workspace/
-├── bchat/                  # Main application (this repo)
-│   ├── src/chat_monitor.py # Core monitoring system
-│   ├── install.sh          # Installation script
-│   ├── bchat              # Universal chat command
-│   ├── rchat              # Monitoring controls
-│   └── docs/              # Documentation
-│
-├── config.json            # Workspace configuration
-├── chats/                 # Chat logs and indexes
-│   ├── chat_index.json    # Machine-readable index
-│   ├── context_summary.json
-│   └── chat_backup_*.md   # Daily consolidated files
-│
-└── logs/                  # System logs
+their-workspace/
+├── their-existing-file.txt     # User's files (no conflict)
+├── their-config.json           # User's files (no conflict) 
+├── their-install.sh            # User's files (no conflict)
+└── bchat/                      # All bchat files contained here
+    ├── README.md               # Documentation
+    ├── LICENSE                 # MIT License
+    ├── CLAUDE.md               # Claude Code instructions
+    ├── bchat                   # Main executable
+    ├── install.sh              # Installation script
+    ├── requirements.txt        # Python dependencies
+    ├── .env.example           # Environment template
+    ├── bin/                    # All executable scripts
+    │   ├── bchat-status        # System status checker
+    │   ├── rchat               # Chat monitor launcher
+    │   ├── runchat             # Alternative launcher
+    │   └── start               # Quick start script
+    ├── config/                 # Configuration files
+    │   ├── config.json         # Main config (Claude Sonnet 4 default)
+    │   └── wrappers/
+    │       ├── claude_wrapper.sh   # Claude CLI logging wrapper
+    │       └── gemini_wrapper.sh   # Gemini CLI logging wrapper
+    ├── core/                   # Python source code
+    │   └── src/
+    │       ├── chat_monitor.py # Core monitoring system
+    │       └── utils/
+    │           └── path_manager.py # Path resolution utilities
+    ├── data/                   # Runtime data (created during use)
+    │   ├── chats/              # Chat logs and processed JSON
+    │   │   ├── chat_index.json      # Searchable session index
+    │   │   ├── context_summary.json # Cross-session analysis
+    │   │   ├── chat_log_*.json      # Individual session logs
+    │   │   ├── claude_current_day_raw.log   # Raw Claude logs
+    │   │   └── gemini_current_day_raw.log   # Raw Gemini logs
+    │   └── logs/
+    │       └── bchat.log       # System operation logs
+    ├── dev/                    # Development tools
+    │   ├── venv/               # Virtual environment (created by install)
+    │   └── dev_directives/
+    │       └── general.md      # Development guidelines
+    └── docs/                   # Complete documentation
+        ├── user-guide.md       # User documentation
+        ├── ai-integration.md   # AI integration guide
+        ├── CHANGELOG.md        # Project history
+        └── structure.md        # Workspace organization guide
 ```
+
+**Perfect Namespace Isolation**: All bchat files are contained within the `bchat/` directory, preventing any conflicts with your existing files. You can have your own `install.sh`, `config.json`, etc. without any naming conflicts.
 
 ---
 
@@ -178,6 +224,33 @@ CHAT_MONITOR_DEBUG=false
   }
 }
 ```
+
+---
+
+## 🧠 **Technical Context Intelligence**
+
+**The Core Purpose**: bchat solves the critical problem of **technical context continuity** in AI-assisted development sessions.
+
+### **The Problem**
+Traditional chat logging captures *what* was decided but loses the crucial *how* and *why*:
+- ❌ Specific code changes and their locations
+- ❌ Root cause analysis of issues
+- ❌ System architecture understanding
+- ❌ Implementation strategies and technical decisions
+- ❌ Development stage progress and status
+
+### **bchat's Solution**
+bchat preserves **technical implementation context** that future development sessions need:
+- ✅ **Code Change Tracking**: Documents specific files modified and why
+- ✅ **Architecture Mapping**: Captures component relationships and system understanding  
+- ✅ **Stage Progress**: Tracks development methodology progress (ST_00 → ST_01 → ST_02...)
+- ✅ **Issue Resolution**: Preserves root cause analysis and solution implementation
+- ✅ **Technical Decisions**: Documents the reasoning behind implementation choices
+
+### **Foundation Audit Results**
+Our comprehensive system analysis reveals that while basic JSON processing works excellently, enhanced technical context capture is essential for development continuity. See detailed findings in [`dev/dev_stages/ST_00/01-250808-audit_report.md`](dev/dev_stages/ST_00/01-250808-audit_report.md).
+
+**Key Discovery**: Context continuity gaps were identified as a HIGH priority issue affecting development efficiency and technical knowledge preservation.
 
 ---
 

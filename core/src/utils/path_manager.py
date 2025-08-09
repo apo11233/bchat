@@ -81,51 +81,57 @@ class PathManager:
             }
         }
     
-    def get_project_root(self) -> str:
+    def get_project_root(self) -> Path:
         """Get the project root directory."""
-        return self.project_root
+        return Path(self.project_root)
     
-    def get_chats_dir(self) -> str:
+    def get_chats_dir(self) -> Path:
         """Get the chats directory path."""
         chats_dir = self.config.get('paths', {}).get('chats_dir', 'chats')
-        if os.path.isabs(chats_dir):
-            return chats_dir
-        return os.path.join(self.project_root, chats_dir)
+        chats_path = Path(chats_dir)
+        if chats_path.is_absolute():
+            return chats_path
+        return self.get_project_root() / chats_dir
     
-    def get_logs_dir(self) -> str:
+    def get_logs_dir(self) -> Path:
         """Get the logs directory path."""
         logs_dir = self.config.get('paths', {}).get('logs_dir', 'logs')
-        if os.path.isabs(logs_dir):
-            return logs_dir
-        return os.path.join(self.project_root, logs_dir)
+        logs_path = Path(logs_dir)
+        if logs_path.is_absolute():
+            return logs_path
+        return self.get_project_root() / logs_dir
     
-    def get_claude_log_path(self) -> str:
+    def get_claude_log_path(self) -> Path:
         """Get the Claude log file path."""
         claude_log = self.config.get('paths', {}).get('claude_log', 'chats/claude_current_day_raw.log')
-        if os.path.isabs(claude_log):
-            return claude_log
-        return os.path.join(self.project_root, claude_log)
+        claude_log_path = Path(claude_log)
+        if claude_log_path.is_absolute():
+            return claude_log_path
+        return self.get_project_root() / claude_log
     
-    def get_gemini_log_path(self) -> str:
+    def get_gemini_log_path(self) -> Path:
         """Get the Gemini log file path."""
         gemini_log = self.config.get('paths', {}).get('gemini_log', 'chats/gemini_current_day_raw.log')
-        if os.path.isabs(gemini_log):
-            return gemini_log
-        return os.path.join(self.project_root, gemini_log)
+        gemini_log_path = Path(gemini_log)
+        if gemini_log_path.is_absolute():
+            return gemini_log_path
+        return self.get_project_root() / gemini_log
     
-    def get_chat_index_path(self) -> str:
+    def get_chat_index_path(self) -> Path:
         """Get the chat index file path."""
         chat_index = self.config.get('paths', {}).get('chat_index', 'chats/chat_index.json')
-        if os.path.isabs(chat_index):
-            return chat_index
-        return os.path.join(self.project_root, chat_index)
+        chat_index_path = Path(chat_index)
+        if chat_index_path.is_absolute():
+            return chat_index_path
+        return self.get_project_root() / chat_index
     
-    def get_context_summary_path(self) -> str:
+    def get_context_summary_path(self) -> Path:
         """Get the context summary file path."""
         context_summary = self.config.get('paths', {}).get('context_summary', 'chats/context_summary.json')
-        if os.path.isabs(context_summary):
-            return context_summary
-        return os.path.join(self.project_root, context_summary)
+        context_summary_path = Path(context_summary)
+        if context_summary_path.is_absolute():
+            return context_summary_path
+        return self.get_project_root() / context_summary
     
     def ensure_directories(self):
         """Ensure all required directories exist."""

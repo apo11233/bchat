@@ -1,0 +1,14 @@
+#!/bin/bash
+# Enhanced daemon restart script for bchat
+echo "🔄 Restarting bchat daemon..."
+
+# Stop the daemon
+echo "🛑 Stopping current daemon..."
+"$(dirname "$0")/stop"
+
+# Wait a moment for clean shutdown
+sleep 2
+
+# Start the daemon
+echo "🚀 Starting daemon..."
+"$(dirname "$0")/start"

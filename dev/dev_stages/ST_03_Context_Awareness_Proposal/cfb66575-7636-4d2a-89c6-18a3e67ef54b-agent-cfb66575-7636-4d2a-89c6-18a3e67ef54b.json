@@ -1,0 +1,182 @@
+[
+  {
+    "content": "Fix date filtering in API fetch script to respect time window",
+    "status": "completed",
+    "priority": "high",
+    "id": "1"
+  },
+  {
+    "content": "Add session storage to retain Current Window settings",
+    "status": "completed",
+    "priority": "medium",
+    "id": "2"
+  },
+  {
+    "content": "Test date filtering with proper time window constraints",
+    "status": "completed",
+    "priority": "high",
+    "id": "3"
+  },
+  {
+    "content": "Fix download functionality with direct file endpoint",
+    "status": "completed",
+    "priority": "high",
+    "id": "4"
+  },
+  {
+    "content": "Update frontend to use direct filename download approach",
+    "status": "completed",
+    "priority": "medium",
+    "id": "5"
+  },
+  {
+    "content": "Debug and fix user's file not found issue",
+    "status": "completed",
+    "priority": "high",
+    "id": "6"
+  },
+  {
+    "content": "Implement job recovery and extended persistence",
+    "status": "completed",
+    "priority": "medium",
+    "id": "7"
+  },
+  {
+    "content": "Investigate browser download failure",
+    "status": "completed",
+    "priority": "high",
+    "id": "8"
+  },
+  {
+    "content": "Fix timezone issue causing wrong UTC conversion in date range filtering",
+    "status": "completed",
+    "priority": "high",
+    "id": "9"
+  },
+  {
+    "content": "Create user_config table for timezone and locale settings",
+    "status": "completed",
+    "priority": "high",
+    "id": "10"
+  },
+  {
+    "content": "Update date handling throughout system to use Chile timezone",
+    "status": "completed",
+    "priority": "high",
+    "id": "11"
+  },
+  {
+    "content": "Add currency and number format configuration",
+    "status": "completed",
+    "priority": "high",
+    "id": "12"
+  },
+  {
+    "content": "Create Settings UI component in dashboard",
+    "status": "completed",
+    "priority": "high",
+    "id": "13"
+  },
+  {
+    "content": "Integrate config service with data formatting throughout system",
+    "status": "pending",
+    "priority": "medium",
+    "id": "14"
+  },
+  {
+    "content": "Auto-detect system preferences for intelligent defaults",
+    "status": "completed",
+    "priority": "high",
+    "id": "15"
+  },
+  {
+    "content": "Delete meli_analytics database and all references",
+    "status": "completed",
+    "priority": "high",
+    "id": "16"
+  },
+  {
+    "content": "Fix timezone issue causing wrong UTC conversion in date range filtering",
+    "status": "completed",
+    "priority": "high",
+    "id": "17"
+  },
+  {
+    "content": "Expand fetch window by 1 day and post-process to filter exact time window",
+    "status": "completed",
+    "priority": "high",
+    "id": "18"
+  },
+  {
+    "content": "Fix modal to show actual fetched record count instead of hardcoded 10000",
+    "status": "completed",
+    "priority": "high",
+    "id": "19"
+  },
+  {
+    "content": "Create SaleAuditService for order auditing functionality",
+    "status": "completed",
+    "priority": "high",
+    "id": "20"
+  },
+  {
+    "content": "Implement order details retrieval for audit",
+    "status": "completed",
+    "priority": "high",
+    "id": "21"
+  },
+  {
+    "content": "Add payment verification logic",
+    "status": "completed",
+    "priority": "high",
+    "id": "22"
+  },
+  {
+    "content": "Implement billing reconciliation",
+    "status": "completed",
+    "priority": "high",
+    "id": "23"
+  },
+  {
+    "content": "Add claims and returns analysis",
+    "status": "completed",
+    "priority": "medium",
+    "id": "24"
+  },
+  {
+    "content": "Create audit API routes",
+    "status": "completed",
+    "priority": "high",
+    "id": "25"
+  },
+  {
+    "content": "Create frontend interface for order auditing",
+    "status": "completed",
+    "priority": "high",
+    "id": "26"
+  },
+  {
+    "content": "Fix order retrieval to use seller search endpoint for API compatibility",
+    "status": "completed",
+    "priority": "high",
+    "id": "27"
+  },
+  {
+    "content": "Create step-by-step audit display showing actual data for each step",
+    "status": "completed",
+    "priority": "high",
+    "id": "28"
+  },
+  {
+    "content": "Remove hardcoded local file logic and implement proper order fetching",
+    "status": "completed",
+    "priority": "high",
+    "id": "29"
+  },
+  {
+    "content": "Research MercadoLibre API endpoints and create comprehensive documentation",
+    "status": "completed",
+    "priority": "high",
+    "id": "30"
+  }
+]
