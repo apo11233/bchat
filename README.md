@@ -12,8 +12,15 @@
 
 A lightweight, fully local Python utility that captures AI-powered CLI chat logs with intelligent semantic processing **and preserves the crucial technical "how" and "why"** that future development sessions need. Features dual AI provider support (Claude/Gemini), automatic chat analysis with implementation details, and structured JSON backups that maintain technical continuity. Simple 3-step setup with professional-grade organization and no external platform dependencies.
 
-## 📋 Development Guidelines
-**For Developers and AI Contributors**: All development work must follow the mandatory directives in [`dev_directives/general.md`](dev_directives/general.md). These guidelines ensure code quality, security, and consistency across the project.
+## 📋 Development Guidelines & Project Status
+
+**For Developers and AI Contributors**: 
+- **Development Directives**: [`dev/dev_directives/general.md`](dev/dev_directives/general.md)  
+- **Project Coordination**: [`dev/dev_stages/stages_workflow.md`](dev/dev_stages/stages_workflow.md)  
+- **Master Context Memory**: [`llm.txt`](llm.txt)  
+- **Current Initiative**: [bchat Vision](dev/dev_stages/ST_06_bchat_Vision/)
+
+**Current Status**: Transitioning from Phase 2 (Deep Context Engine) to BChat MCP development with structured stage progression.
 
 ---
 

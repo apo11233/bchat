@@ -8,7 +8,7 @@ import sys
 import json
 import hashlib
 import logging
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional
 import re
@@ -132,9 +132,110 @@ class ChatProcessor:
             summarization_prompt = self._create_summarization_prompt(final_prompt, provider)
             summary_data = self.api_manager.call_api(summarization_prompt)
             self._save_new_chat(prompt, final_prompt, summary_data, provider)
+            
+            # Provide user feedback
+            context_status = "✓ Context injected" if analysis["is_contextual"] else "○ No context needed"
+            print(f"✅ bchat processed successfully")
+            print(f"   Provider: {provider.title()}")
+            print(f"   Context: {context_status}")
+            if summary_data and "error" not in summary_data:
+                print(f"   Summary: {summary_data.get('summary', 'Processing complete')}")
+            else:
+                print(f"   Status: Logged to chat history")
 
         except Exception as e:
             logging.error(f"Error processing prompt: {e}", exc_info=True)
+
+    def consolidate_existing_data(self):
+        """Consolidate existing chat data and update indices."""
+        try:
+            logging.info("Starting data consolidation...")
+            
+            # Process any existing raw log files
+            chats_dir = self.path_manager.get_chats_dir()
+            raw_files = list(chats_dir.glob("*_raw.log"))
+            
+            if raw_files:
+                logging.info(f"Found {len(raw_files)} raw log files to process")
+                for raw_file in raw_files:
+                    self._process_raw_log_file(raw_file)
+            else:
+                logging.info("No raw log files found")
+            
+            # Update context summary
+            self._update_context_summary()
+            
+            logging.info("Data consolidation completed successfully")
+            print("✅ bchat consolidation complete")
+            print(f"   Raw files processed: {len(raw_files)}")
+            print("   Chat history indexed and ready for context queries")
+            
+        except Exception as e:
+            logging.error(f"Error during consolidation: {e}", exc_info=True)
+            print(f"❌ Consolidation failed: {e}")
+
+    def _process_raw_log_file(self, raw_file: Path):
+        """Process a single raw log file."""
+        try:
+            provider = "gemini" if "gemini" in raw_file.name else "claude"
+            
+            with open(raw_file, 'r', encoding='utf-8') as f:
+                content = f.read().strip()
+            
+            if content:
+                # Create a consolidation prompt for the raw content
+                consolidation_prompt = f"Consolidated chat history from {raw_file.name}"
+                summarization_prompt = self._create_summarization_prompt(content, provider)
+                summary_data = self.api_manager.call_api(summarization_prompt)
+                
+                if summary_data and "error" not in summary_data:
+                    self._save_new_chat(consolidation_prompt, content, summary_data, provider)
+                    logging.info(f"Successfully processed {raw_file.name}")
+                else:
+                    logging.warning(f"Failed to process {raw_file.name}: API error")
+            
+        except Exception as e:
+            logging.warning(f"Could not process raw file {raw_file}: {e}")
+
+    def _update_context_summary(self):
+        """Update the global context summary file."""
+        try:
+            index_file = self.path_manager.get_chat_index_path()
+            summary_file = self.path_manager.get_chats_dir() / "context_summary.json"
+            
+            if not index_file.exists():
+                return
+                
+            with open(index_file, 'r', encoding='utf-8') as f:
+                index_data = json.load(f)
+            
+            # Generate high-level summary
+            total_sessions = len(index_data)
+            recent_sessions = [entry for entry in index_data if entry.get('date') >= (datetime.now() - timedelta(days=7)).strftime("%Y-%m-%d")]
+            all_keywords = []
+            all_decisions = []
+            
+            for entry in index_data:
+                all_keywords.extend(entry.get('keywords', []))
+                if 'entities' in entry:
+                    all_decisions.extend(entry['entities'].get('decisions', []))
+            
+            context_summary = {
+                "last_updated": datetime.now().isoformat(),
+                "total_sessions": total_sessions,
+                "recent_sessions_count": len(recent_sessions),
+                "top_keywords": list(set(all_keywords))[:20],
+                "key_decisions": list(set(all_decisions))[:10],
+                "summary": f"Processed {total_sessions} chat sessions with {len(recent_sessions)} recent sessions in the last week"
+            }
+            
+            with open(summary_file, 'w', encoding='utf-8') as f:
+                json.dump(context_summary, f, indent=2)
+                
+            logging.info("Context summary updated successfully")
+            
+        except Exception as e:
+            logging.warning(f"Could not update context summary: {e}")
 
     def _create_summarization_prompt(self, content: str, ai_source: str) -> str:
         """Create a prompt for content summarization."""
@@ -237,15 +338,22 @@ def main():
     load_dotenv()
     
     parser = argparse.ArgumentParser(description='bchat: AI Chat Processor with Context-Awareness')
-    parser.add_argument('prompt', help='The user prompt to process.')
+    parser.add_argument('prompt', nargs='?', help='The user prompt to process. If not provided, triggers consolidation.')
     parser.add_argument('--provider', default='gemini', choices=['gemini', 'claude'], help='The AI provider to use.')
     parser.add_argument('--config', help='Path to configuration file')
+    parser.add_argument('--consolidate', action='store_true', help='Trigger manual consolidation of existing chat data')
     
     args = parser.parse_args()
     
     try:
         processor = ChatProcessor(args.config)
-        processor.process_prompt(args.prompt, args.provider)
+        
+        if args.consolidate or not args.prompt:
+            # Trigger consolidation when --consolidate flag is used or no prompt provided
+            processor.consolidate_existing_data()
+        else:
+            # Process the user prompt
+            processor.process_prompt(args.prompt, args.provider)
     except Exception as e:
         logging.error(f"A fatal error occurred: {e}", exc_info=True)
         sys.exit(1)

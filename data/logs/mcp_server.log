@@ -1,0 +1,352 @@
+2025-08-09 21:55:40,164 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-09 21:55:48,562 - MCP - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-08-09 21:55:52,211 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 21:55:56,565 - MCP - INFO - 127.0.0.1 - code 400, message Invalid JSON
+2025-08-09 21:55:56,565 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 400 -
+2025-08-09 21:56:16,354 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-09 21:56:22,852 - MCP - INFO - 127.0.0.1 - code 400, message Invalid JSON
+2025-08-09 21:56:22,853 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 400 -
+2025-08-09 21:57:53,897 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-09 21:58:00,576 - MCP - INFO - Received request: {"jsonrpc":"2.0","method":"tools/call","params":{"name":"echo","arguments":{"text":"Hello MCP"}},"id":2}
+2025-08-09 21:58:00,576 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 21:58:00,577 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"content": [{"type": "text", "text": "Echo: Hello MCP"}]}, "id": 2}
+2025-08-09 21:58:04,220 - MCP - INFO - Received request: {"jsonrpc":"2.0","method":"tools/call","params":{"name":"search_context","arguments":{"query":"claude config"}},"id":3}
+2025-08-09 21:58:04,221 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 21:58:04,221 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"content": [{"type": "text", "text": "No relevant context found for: claude config"}]}, "id": 3}
+2025-08-09 21:59:36,961 - MCP - INFO - Received request: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{"roots":{}},"clientInfo":{"name":"claude-code","version":"1.0.72"}},"jsonrpc":"2.0","id":0}
+2025-08-09 21:59:36,962 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 21:59:36,962 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "error": {"code": -32601, "message": "Method not found: initialize"}, "id": 0}
+2025-08-09 22:00:10,401 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-09 22:00:17,044 - MCP - INFO - Received request: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{"roots":{}},"clientInfo":{"name":"claude-code","version":"1.0.72"}},"jsonrpc":"2.0","id":0}
+2025-08-09 22:00:17,044 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 22:00:17,044 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "error": {"code": -32601, "message": "Method not found: initialize"}, "id": 0}
+2025-08-09 22:00:30,003 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-09 22:00:49,510 - MCP - INFO - Received request: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{"roots":{}},"clientInfo":{"name":"claude-code","version":"1.0.72"}},"jsonrpc":"2.0","id":0}
+2025-08-09 22:00:49,510 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 22:00:49,510 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"protocolVersion": "2025-06-18", "capabilities": {"tools": {}}, "serverInfo": {"name": "bchat-mcp-server", "version": "1.0.0"}}, "id": 0}
+2025-08-09 22:00:49,547 - MCP - INFO - Received request: {"method":"notifications/initialized","jsonrpc":"2.0"}
+2025-08-09 22:00:49,547 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 22:00:49,548 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "error": {"code": -32601, "message": "Method not found: notifications/initialized"}, "id": null}
+2025-08-09 22:00:49,583 - MCP - INFO - Received request: {"method":"tools/list","jsonrpc":"2.0","id":1}
+2025-08-09 22:00:49,583 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 22:00:49,583 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"tools": [{"name": "echo", "title": "Echo Test", "description": "Echo input text for testing MCP connection", "inputSchema": {"type": "object", "properties": {"text": {"type": "string"}}, "required": ["text"]}}, {"name": "search_context", "title": "Search Chat Context", "description": "Search bchat conversation history for relevant context", "inputSchema": {"type": "object", "properties": {"query": {"type": "string", "description": "Search terms or keywords"}, "provider": {"type": "string", "description": "AI provider filter (claude/gemini)", "enum": ["claude", "gemini"]}, "limit": {"type": "integer", "description": "Max results to return", "default": 3}}, "required": ["query"]}}]}, "id": 1}
+2025-08-09 22:32:27,327 - MCP - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-08-09 22:32:31,941 - MCP - INFO - Received request: {"jsonrpc":"2.0","method":"tools/list","id":1}
+2025-08-09 22:32:31,941 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 22:32:31,941 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"tools": [{"name": "echo", "title": "Echo Test", "description": "Echo input text for testing MCP connection", "inputSchema": {"type": "object", "properties": {"text": {"type": "string"}}, "required": ["text"]}}, {"name": "search_context", "title": "Search Chat Context", "description": "Search bchat conversation history for relevant context", "inputSchema": {"type": "object", "properties": {"query": {"type": "string", "description": "Search terms or keywords"}, "provider": {"type": "string", "description": "AI provider filter (claude/gemini)", "enum": ["claude", "gemini"]}, "limit": {"type": "integer", "description": "Max results to return", "default": 3}}, "required": ["query"]}}]}, "id": 1}
+2025-08-09 22:32:36,737 - MCP - INFO - Received request: {"jsonrpc":"2.0","method":"tools/call","params":{"name":"echo","arguments":{"text":"MCP Server is working\!"}},"id":2}
+2025-08-09 22:32:36,737 - MCP - ERROR - JSON decode error: Invalid \escape: line 1 column 106 (char 105) - Body: {"jsonrpc":"2.0","method":"tools/call","params":{"name":"echo","arguments":{"text":"MCP Server is working\!"}},"id":2}
+2025-08-09 22:32:36,737 - MCP - INFO - 127.0.0.1 - code 400, message Invalid JSON: Invalid \escape: line 1 column 106 (char 105)
+2025-08-09 22:32:36,737 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 400 -
+2025-08-09 22:32:41,305 - MCP - INFO - Received request: {"jsonrpc":"2.0","method":"tools/call","params":{"name":"echo","arguments":{"text":"MCP Server works"}},"id":2}
+2025-08-09 22:32:41,305 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 22:32:41,305 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"content": [{"type": "text", "text": "Echo: MCP Server works"}]}, "id": 2}
+2025-08-09 22:32:46,132 - MCP - INFO - Received request: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{"roots":{}},"clientInfo":{"name":"claude-code","version":"1.0.72"}},"jsonrpc":"2.0","id":0}
+2025-08-09 22:32:46,132 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 22:32:46,132 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"protocolVersion": "2025-06-18", "capabilities": {"tools": {}}, "serverInfo": {"name": "bchat-mcp-server", "version": "1.0.0"}}, "id": 0}
+2025-08-09 22:32:46,175 - MCP - INFO - Received request: {"method":"notifications/initialized","jsonrpc":"2.0"}
+2025-08-09 22:32:46,175 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 22:32:46,175 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "error": {"code": -32601, "message": "Method not found: notifications/initialized"}, "id": null}
+2025-08-09 22:32:50,087 - MCP - INFO - Received request: {"jsonrpc":"2.0","method":"tools/call","params":{"name":"search_context","arguments":{"query":"implementation context"}},"id":3}
+2025-08-09 22:32:50,087 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 22:32:50,087 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"content": [{"type": "text", "text": "No relevant context found for: implementation context"}]}, "id": 3}
+2025-08-09 22:46:53,400 - MCP - INFO - Received request: {"jsonrpc":"2.0","method":"tools/call","params":{"name":"search_context","arguments":{"query":"MCP server error handling"}},"id":1}
+2025-08-09 22:46:53,401 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 22:46:53,401 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"content": [{"type": "text", "text": "No relevant context found for: MCP server error handling"}]}, "id": 1}
+2025-08-09 22:46:57,661 - MCP - INFO - Received request: {"jsonrpc":"2.0","method":"tools/call","params":{"name":"search_context","arguments":{"query":"MCP protocol"}},"id":2}
+2025-08-09 22:46:57,661 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 22:46:57,661 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"content": [{"type": "text", "text": "No relevant context found for: MCP protocol"}]}, "id": 2}
+2025-08-09 22:47:02,219 - MCP - INFO - Received request: {"jsonrpc":"2.0","method":"tools/call","params":{"name":"search_context","arguments":{"query":"implementation"}},"id":3}
+2025-08-09 22:47:02,219 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 22:47:02,219 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"content": [{"type": "text", "text": "No relevant context found for: implementation"}]}, "id": 3}
+2025-08-09 22:47:35,664 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-09 22:48:59,054 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-09 22:49:15,550 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-09 22:49:25,828 - MCP - INFO - Received request: {
+  "jsonrpc": "2.0",
+  "method": "tools/call",
+  "params": {
+    "name": "search_context",
+    "arguments": {
+      "query": "MCP protocol implementation"
+    }
+  },
+  "id": "test_search_1"
+}
+2025-08-09 22:49:25,828 - MCP - INFO - Searching with query: MCP protocol implementation
+2025-08-09 22:49:25,828 - MCP - INFO - Index path: /Users/admin/Documents/Developer/bchat/data/chats/chat_index.json
+2025-08-09 22:49:25,828 - MCP - INFO - Index exists: True
+2025-08-09 22:49:25,828 - MCP - INFO - Search results: 3 found
+2025-08-09 22:49:25,828 - MCP - INFO - Result 0: The user is inquiring about the implementation of Claude code integration with the MCP protocol.
+2025-08-09 22:49:25,828 - MCP - INFO - Result 1: The session focused on testing the error handling implementation for the MCP server.
+2025-08-09 22:49:25,828 - MCP - INFO - Result 2: The session initiated a discussion about best practices for implementing context search.
+2025-08-09 22:49:25,829 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 22:49:25,829 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"content": [{"type": "text", "text": "Found 3 relevant conversations:"}, {"type": "text", "text": "\n---\n-- Context from session gemini_20250809_224627 (2025-08-09T22:46:27.660517) ---\nSummary: The user is inquiring about the implementation of Claude code integration with the MCP protocol.\nDecisions: []\n---\n\n\n---\n-- Context from session gemini_20250809_224614 (2025-08-09T22:46:14.335691) ---\nSummary: The session focused on testing the error handling implementation for the MCP server.\nDecisions: []\n---\n\n\n---\n-- Context from session claude_20250809_224636 (2025-08-09T22:46:36.754609) ---\nSummary: The session initiated a discussion about best practices for implementing context search.\nDecisions: []\n---\n"}]}, "id": "test_search_1"}
+2025-08-09 22:49:35,855 - MCP - INFO - Received request: {
+  "jsonrpc": "2.0",
+  "method": "tools/call",
+  "params": {
+    "name": "search_context",
+    "arguments": {
+      "query": "context search best practices",
+      "provider": "claude"
+    }
+  },
+  "id": "test_search_2"
+}
+2025-08-09 22:49:35,856 - MCP - INFO - Searching with query: context search best practices
+2025-08-09 22:49:35,856 - MCP - INFO - Index path: /Users/admin/Documents/Developer/bchat/data/chats/chat_index.json
+2025-08-09 22:49:35,856 - MCP - INFO - Index exists: True
+2025-08-09 22:49:35,856 - MCP - INFO - Search results: 1 found
+2025-08-09 22:49:35,856 - MCP - INFO - Result 0: The session initiated a discussion about best practices for implementing context search.
+2025-08-09 22:49:35,856 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 22:49:35,856 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"content": [{"type": "text", "text": "Found 1 relevant conversations:"}, {"type": "text", "text": "\n---\n-- Context from session claude_20250809_224636 (2025-08-09T22:46:36.754609) ---\nSummary: The session initiated a discussion about best practices for implementing context search.\nDecisions: []\n---\n"}]}, "id": "test_search_2"}
+2025-08-09 22:49:49,361 - MCP - INFO - Received request: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{"roots":{}},"clientInfo":{"name":"claude-code","version":"1.0.72"}},"jsonrpc":"2.0","id":0}
+2025-08-09 22:49:49,362 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 22:49:49,362 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"protocolVersion": "2025-06-18", "capabilities": {"tools": {}}, "serverInfo": {"name": "bchat-mcp-server", "version": "1.0.0"}}, "id": 0}
+2025-08-09 22:49:49,398 - MCP - INFO - Received request: {"method":"notifications/initialized","jsonrpc":"2.0"}
+2025-08-09 22:49:49,398 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 22:49:49,398 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "error": {"code": -32601, "message": "Method not found: notifications/initialized"}, "id": null}
+2025-08-09 22:50:20,545 - MCP - INFO - Received request: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{"roots":{}},"clientInfo":{"name":"claude-code","version":"1.0.72"}},"jsonrpc":"2.0","id":0}
+2025-08-09 22:50:20,545 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 22:50:20,545 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"protocolVersion": "2025-06-18", "capabilities": {"tools": {}}, "serverInfo": {"name": "bchat-mcp-server", "version": "1.0.0"}}, "id": 0}
+2025-08-09 22:50:20,584 - MCP - INFO - Received request: {"method":"notifications/initialized","jsonrpc":"2.0"}
+2025-08-09 22:50:20,584 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 22:50:20,584 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "error": {"code": -32601, "message": "Method not found: notifications/initialized"}, "id": null}
+2025-08-09 22:50:20,618 - MCP - INFO - Received request: {"method":"tools/list","jsonrpc":"2.0","id":1}
+2025-08-09 22:50:20,618 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 22:50:20,618 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"tools": [{"name": "echo", "title": "Echo Test", "description": "Echo input text for testing MCP connection", "inputSchema": {"type": "object", "properties": {"text": {"type": "string"}}, "required": ["text"]}}, {"name": "search_context", "title": "Search Chat Context", "description": "Search bchat conversation history for relevant context", "inputSchema": {"type": "object", "properties": {"query": {"type": "string", "description": "Search terms or keywords"}, "provider": {"type": "string", "description": "AI provider filter (claude/gemini)", "enum": ["claude", "gemini"]}, "limit": {"type": "integer", "description": "Max results to return", "default": 3}}, "required": ["query"]}}]}, "id": 1}
+2025-08-09 23:01:51,567 - MCP - INFO - Received request: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{"roots":{}},"clientInfo":{"name":"claude-code","version":"1.0.72"}},"jsonrpc":"2.0","id":0}
+2025-08-09 23:01:51,568 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 23:01:51,569 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"protocolVersion": "2025-06-18", "capabilities": {"tools": {}}, "serverInfo": {"name": "bchat-mcp-server", "version": "1.0.0"}}, "id": 0}
+2025-08-09 23:01:51,617 - MCP - INFO - Received request: {"method":"notifications/initialized","jsonrpc":"2.0"}
+2025-08-09 23:01:51,618 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 23:01:51,618 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "error": {"code": -32601, "message": "Method not found: notifications/initialized"}, "id": null}
+2025-08-09 23:01:51,775 - MCP - INFO - Received request: {"method":"tools/list","jsonrpc":"2.0","id":1}
+2025-08-09 23:01:51,775 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 23:01:51,777 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"tools": [{"name": "echo", "title": "Echo Test", "description": "Echo input text for testing MCP connection", "inputSchema": {"type": "object", "properties": {"text": {"type": "string"}}, "required": ["text"]}}, {"name": "search_context", "title": "Search Chat Context", "description": "Search bchat conversation history for relevant context", "inputSchema": {"type": "object", "properties": {"query": {"type": "string", "description": "Search terms or keywords"}, "provider": {"type": "string", "description": "AI provider filter (claude/gemini)", "enum": ["claude", "gemini"]}, "limit": {"type": "integer", "description": "Max results to return", "default": 3}}, "required": ["query"]}}]}, "id": 1}
+2025-08-09 23:02:40,654 - MCP - INFO - Received request: {"method":"tools/call","params":{"name":"search_context","arguments":{"query":"context memory refresh session history","limit":5}},"jsonrpc":"2.0","id":2}
+2025-08-09 23:02:40,656 - MCP - INFO - Searching with query: context memory refresh session history
+2025-08-09 23:02:40,656 - MCP - INFO - Index path: /Users/admin/Documents/Developer/bchat/data/chats/chat_index.json
+2025-08-09 23:02:40,657 - MCP - INFO - Index exists: True
+2025-08-09 23:02:40,657 - MCP - INFO - Search results: 2 found
+2025-08-09 23:02:40,657 - MCP - INFO - Result 0: The session initiated a discussion about best practices for implementing context search.
+2025-08-09 23:02:40,657 - MCP - INFO - Result 1: The session focused on testing the error handling implementation for the MCP server.
+2025-08-09 23:02:40,658 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 23:02:40,658 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"content": [{"type": "text", "text": "Found 2 relevant conversations:"}, {"type": "text", "text": "\n---\n-- Context from session claude_20250809_224636 (2025-08-09T22:46:36.754609) ---\nSummary: The session initiated a discussion about best practices for implementing context search.\nDecisions: []\n---\n\n\n---\n-- Context from session gemini_20250809_224614 (2025-08-09T22:46:14.335691) ---\nSummary: The session focused on testing the error handling implementation for the MCP server.\nDecisions: []\n---\n"}]}, "id": 2}
+2025-08-09 23:02:43,736 - MCP - INFO - Received request: {"method":"tools/call","params":{"name":"search_context","arguments":{"query":"bchat project development MCP server Deep Context Engine","limit":5}},"jsonrpc":"2.0","id":3}
+2025-08-09 23:02:43,737 - MCP - INFO - Searching with query: bchat project development MCP server Deep Context Engine
+2025-08-09 23:02:43,737 - MCP - INFO - Index path: /Users/admin/Documents/Developer/bchat/data/chats/chat_index.json
+2025-08-09 23:02:43,737 - MCP - INFO - Index exists: True
+2025-08-09 23:02:43,738 - MCP - INFO - Search results: 3 found
+2025-08-09 23:02:43,738 - MCP - INFO - Result 0: The session focused on testing the error handling implementation for the MCP server.
+2025-08-09 23:02:43,738 - MCP - INFO - Result 1: The user is inquiring about the implementation of Claude code integration with the MCP protocol.
+2025-08-09 23:02:43,738 - MCP - INFO - Result 2: The session initiated a discussion about best practices for implementing context search.
+2025-08-09 23:02:43,739 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 23:02:43,739 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"content": [{"type": "text", "text": "Found 3 relevant conversations:"}, {"type": "text", "text": "\n---\n-- Context from session gemini_20250809_224614 (2025-08-09T22:46:14.335691) ---\nSummary: The session focused on testing the error handling implementation for the MCP server.\nDecisions: []\n---\n\n\n---\n-- Context from session gemini_20250809_224627 (2025-08-09T22:46:27.660517) ---\nSummary: The user is inquiring about the implementation of Claude code integration with the MCP protocol.\nDecisions: []\n---\n\n\n---\n-- Context from session claude_20250809_224636 (2025-08-09T22:46:36.754609) ---\nSummary: The session initiated a discussion about best practices for implementing context search.\nDecisions: []\n---\n"}]}, "id": 3}
+2025-08-09 23:32:08,620 - MCP - INFO - Received request: {"jsonrpc": "2.0", "id": 1, "method": "tools/list", "params": {}}
+2025-08-09 23:32:08,621 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 23:32:08,621 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"tools": [{"name": "echo", "title": "Echo Test", "description": "Echo input text for testing MCP connection", "inputSchema": {"type": "object", "properties": {"text": {"type": "string"}}, "required": ["text"]}}, {"name": "search_context", "title": "Search Chat Context", "description": "Search bchat conversation history for relevant context", "inputSchema": {"type": "object", "properties": {"query": {"type": "string", "description": "Search terms or keywords"}, "provider": {"type": "string", "description": "AI provider filter (claude/gemini)", "enum": ["claude", "gemini"]}, "limit": {"type": "integer", "description": "Max results to return", "default": 3}}, "required": ["query"]}}]}, "id": 1}
+2025-08-09 23:32:12,861 - MCP - INFO - Received request: {"jsonrpc": "2.0", "id": 2, "method": "tools/call", "params": {"name": "search_context", "arguments": {"query": "MCP server", "limit": 2}}}
+2025-08-09 23:32:12,861 - MCP - INFO - Searching with query: MCP server
+2025-08-09 23:32:12,861 - MCP - INFO - Index path: /Users/admin/Documents/Developer/bchat/data/chats/chat_index.json
+2025-08-09 23:32:12,862 - MCP - INFO - Index exists: True
+2025-08-09 23:32:12,863 - MCP - INFO - Search results: 2 found
+2025-08-09 23:32:12,863 - MCP - INFO - Result 0: The session focused on testing the error handling implementation for the MCP server.
+2025-08-09 23:32:12,863 - MCP - INFO - Result 1: The user is inquiring about the implementation of Claude code integration with the MCP protocol.
+2025-08-09 23:32:12,864 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 23:32:12,864 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"content": [{"type": "text", "text": "Found 2 relevant conversations:"}, {"type": "text", "text": "\n---\n-- Context from session gemini_20250809_224614 (2025-08-09T22:46:14.335691) ---\nSummary: The session focused on testing the error handling implementation for the MCP server.\nDecisions: []\n---\n\n\n---\n-- Context from session gemini_20250809_224627 (2025-08-09T22:46:27.660517) ---\nSummary: The user is inquiring about the implementation of Claude code integration with the MCP protocol.\nDecisions: []\n---\n"}]}, "id": 2}
+2025-08-09 23:36:44,507 - MCP - INFO - Received request: {"jsonrpc": "2.0", "id": 1, "method": 
+  "tools/list", "params": {}}
+2025-08-09 23:36:44,508 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-09 23:36:44,509 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"tools": [{"name": "echo", "title": "Echo Test", "description": "Echo input text for testing MCP connection", "inputSchema": {"type": "object", "properties": {"text": {"type": "string"}}, "required": ["text"]}}, {"name": "search_context", "title": "Search Chat Context", "description": "Search bchat conversation history for relevant context", "inputSchema": {"type": "object", "properties": {"query": {"type": "string", "description": "Search terms or keywords"}, "provider": {"type": "string", "description": "AI provider filter (claude/gemini)", "enum": ["claude", "gemini"]}, "limit": {"type": "integer", "description": "Max results to return", "default": 3}}, "required": ["query"]}}]}, "id": 1}
+2025-08-10 00:18:12,367 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 00:18:38,318 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 00:19:54,526 - MCP - INFO - Received request: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{"roots":{}},"clientInfo":{"name":"claude-code","version":"1.0.72"}},"jsonrpc":"2.0","id":0}
+2025-08-10 00:19:54,528 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-10 00:19:54,529 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"protocolVersion": "2025-06-18", "capabilities": {"tools": {}}, "serverInfo": {"name": "bchat-mcp-server", "version": "1.0.0"}}, "id": 0}
+2025-08-10 00:19:54,585 - MCP - INFO - Received request: {"method":"notifications/initialized","jsonrpc":"2.0"}
+2025-08-10 00:19:54,586 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-10 00:19:54,587 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "error": {"code": -32601, "message": "Method not found: notifications/initialized"}, "id": null}
+2025-08-10 00:19:54,729 - MCP - INFO - Received request: {"method":"tools/list","jsonrpc":"2.0","id":1}
+2025-08-10 00:19:54,729 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-10 00:19:54,730 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"tools": [{"name": "echo", "title": "Echo Test", "description": "Echo input text for testing MCP connection", "inputSchema": {"type": "object", "properties": {"text": {"type": "string"}}, "required": ["text"]}}, {"name": "search_context", "title": "Search Chat Context", "description": "Search bchat conversation history for relevant context", "inputSchema": {"type": "object", "properties": {"query": {"type": "string", "description": "Search terms or keywords"}, "provider": {"type": "string", "description": "AI provider filter (claude/gemini)", "enum": ["claude", "gemini"]}, "limit": {"type": "integer", "description": "Max results to return", "default": 3}}, "required": ["query"]}}]}, "id": 1}
+2025-08-10 00:21:07,288 - MCP - INFO - Received request: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{"roots":{}},"clientInfo":{"name":"claude-code","version":"1.0.72"}},"jsonrpc":"2.0","id":0}
+2025-08-10 00:21:07,290 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-10 00:21:07,290 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"protocolVersion": "2025-06-18", "capabilities": {"tools": {}}, "serverInfo": {"name": "bchat-mcp-server", "version": "1.0.0"}}, "id": 0}
+2025-08-10 00:21:07,330 - MCP - INFO - Received request: {"method":"notifications/initialized","jsonrpc":"2.0"}
+2025-08-10 00:21:07,330 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-10 00:21:07,331 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "error": {"code": -32601, "message": "Method not found: notifications/initialized"}, "id": null}
+2025-08-10 00:21:15,898 - MCP - INFO - Received request: {"method":"tools/call","params":{"name":"echo","arguments":{"text":"Testing bchat MCP server connection"}},"jsonrpc":"2.0","id":2}
+2025-08-10 00:21:15,899 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-10 00:21:15,899 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"content": [{"type": "text", "text": "Echo: Testing bchat MCP server connection"}]}, "id": 2}
+2025-08-10 00:21:18,513 - MCP - INFO - Received request: {"method":"tools/call","params":{"name":"search_context","arguments":{"query":"context engine implementation","limit":2}},"jsonrpc":"2.0","id":3}
+2025-08-10 00:21:18,514 - MCP - INFO - Searching with query: context engine implementation
+2025-08-10 00:21:18,516 - MCP - INFO - Index path: /Users/admin/Documents/Developer/bchat/data/chats/chat_index.json
+2025-08-10 00:21:18,516 - MCP - INFO - Index exists: True
+2025-08-10 00:21:18,518 - MCP - INFO - Search results: 2 found
+2025-08-10 00:21:18,518 - MCP - INFO - Result 0: The session initiated a discussion about best practices for implementing context search.
+2025-08-10 00:21:18,518 - MCP - INFO - Result 1: The session focused on testing the error handling implementation for the MCP server.
+2025-08-10 00:21:18,521 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-10 00:21:18,522 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"content": [{"type": "text", "text": "Found 2 relevant conversations:"}, {"type": "text", "text": "\n---\n-- Context from session claude_20250809_224636 (2025-08-09T22:46:36.754609) ---\nSummary: The session initiated a discussion about best practices for implementing context search.\nDecisions: []\n---\n\n\n---\n-- Context from session gemini_20250809_224614 (2025-08-09T22:46:14.335691) ---\nSummary: The session focused on testing the error handling implementation for the MCP server.\nDecisions: []\n---\n"}]}, "id": 3}
+2025-08-10 00:21:33,172 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 00:22:58,035 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 00:23:21,857 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 00:23:21,935 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 00:23:23,296 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 00:24:24,818 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 00:24:28,821 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 00:24:38,656 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 00:24:56,342 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 00:25:01,005 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 00:25:07,568 - MCP - INFO - Received request: {"method":"tools/call","params":{"name":"echo","arguments":{"text":"Testing updated STDIO MCP server"}},"jsonrpc":"2.0","id":4}
+2025-08-10 00:25:07,568 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-10 00:25:07,569 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"content": [{"type": "text", "text": "Echo: Testing updated STDIO MCP server"}]}, "id": 4}
+2025-08-10 00:25:10,434 - MCP - INFO - Received request: {"method":"tools/call","params":{"name":"search_context","arguments":{"query":"MCP server implementation","limit":1}},"jsonrpc":"2.0","id":5}
+2025-08-10 00:25:10,435 - MCP - INFO - Searching with query: MCP server implementation
+2025-08-10 00:25:10,435 - MCP - INFO - Index path: /Users/admin/Documents/Developer/bchat/data/chats/chat_index.json
+2025-08-10 00:25:10,435 - MCP - INFO - Index exists: True
+2025-08-10 00:25:10,435 - MCP - INFO - Search results: 1 found
+2025-08-10 00:25:10,436 - MCP - INFO - Result 0: The session focused on testing the error handling implementation for the MCP server.
+2025-08-10 00:25:10,436 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-10 00:25:10,436 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"content": [{"type": "text", "text": "Found 1 relevant conversations:"}, {"type": "text", "text": "\n---\n-- Context from session gemini_20250809_224614 (2025-08-09T22:46:14.335691) ---\nSummary: The session focused on testing the error handling implementation for the MCP server.\nDecisions: []\n---\n"}]}, "id": 5}
+2025-08-10 00:27:26,733 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 00:27:45,562 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 00:28:03,290 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 00:28:16,250 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 00:28:16,327 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 00:28:17,639 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 07:56:25,767 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 07:56:57,897 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 07:58:38,349 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 08:10:10,249 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 08:10:54,631 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 08:17:53,549 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 08:28:48,042 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 08:31:21,212 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 08:31:23,211 - MCP - INFO - Received request: {"jsonrpc": "2.0", "method": "tools/list", "id": 1}
+2025-08-10 08:31:23,211 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-10 08:31:23,212 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"tools": [{"name": "echo", "title": "Echo Test", "description": "Echo input text for testing MCP connection", "inputSchema": {"type": "object", "properties": {"text": {"type": "string"}}, "required": ["text"]}}, {"name": "search_context", "title": "Search Chat Context", "description": "Search bchat conversation history for relevant context", "inputSchema": {"type": "object", "properties": {"query": {"type": "string", "description": "Search terms or keywords"}, "provider": {"type": "string", "description": "AI provider filter (claude/gemini)", "enum": ["claude", "gemini"]}, "limit": {"type": "integer", "description": "Max results to return", "default": 3}}, "required": ["query"]}}]}, "id": 1}
+2025-08-10 08:33:37,029 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 08:33:46,952 - MCP - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-08-10 08:58:58,295 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 08:59:00,258 - MCP - INFO - Received request: {"jsonrpc": "2.0", "method": "tools/list", "id": 1}
+2025-08-10 08:59:00,258 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-10 08:59:00,259 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"tools": [{"name": "echo", "title": "Echo Test", "description": "Echo input text for testing MCP connection", "inputSchema": {"type": "object", "properties": {"text": {"type": "string"}}, "required": ["text"]}}, {"name": "search_context", "title": "Search Chat Context", "description": "Search bchat conversation history for relevant context", "inputSchema": {"type": "object", "properties": {"query": {"type": "string", "description": "Search terms or keywords"}, "provider": {"type": "string", "description": "AI provider filter (claude/gemini)", "enum": ["claude", "gemini"]}, "limit": {"type": "integer", "description": "Max results to return", "default": 3}}, "required": ["query"]}}]}, "id": 1}
+2025-08-10 09:08:51,143 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 09:08:53,111 - MCP - INFO - Received request: {"jsonrpc": "2.0", "method": "tools/list", "id": 1}
+2025-08-10 09:08:53,111 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-10 09:08:53,111 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"tools": [{"name": "echo", "title": "Echo Test", "description": "Echo input text for testing MCP connection", "inputSchema": {"type": "object", "properties": {"text": {"type": "string"}}, "required": ["text"]}}, {"name": "search_context", "title": "Search Chat Context", "description": "Search bchat conversation history for relevant context", "inputSchema": {"type": "object", "properties": {"query": {"type": "string", "description": "Search terms or keywords"}, "provider": {"type": "string", "description": "AI provider filter (claude/gemini)", "enum": ["claude", "gemini"]}, "limit": {"type": "integer", "description": "Max results to return", "default": 3}}, "required": ["query"]}}]}, "id": 1}
+2025-08-10 09:09:56,774 - MCP - INFO - Received request: {"jsonrpc": "2.0", "method": "tools/list", "id": 1}
+2025-08-10 09:09:56,774 - MCP - INFO - 127.0.0.1 - "POST / HTTP/1.1" 200 -
+2025-08-10 09:09:56,774 - MCP - INFO - Sent response: {"jsonrpc": "2.0", "result": {"tools": [{"name": "echo", "title": "Echo Test", "description": "Echo input text for testing MCP connection", "inputSchema": {"type": "object", "properties": {"text": {"type": "string"}}, "required": ["text"]}}, {"name": "search_context", "title": "Search Chat Context", "description": "Search bchat conversation history for relevant context", "inputSchema": {"type": "object", "properties": {"query": {"type": "string", "description": "Search terms or keywords"}, "provider": {"type": "string", "description": "AI provider filter (claude/gemini)", "enum": ["claude", "gemini"]}, "limit": {"type": "integer", "description": "Max results to return", "default": 3}}, "required": ["query"]}}]}, "id": 1}
+2025-08-10 09:10:55,109 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 09:37:14,643 - MCP - INFO - MCP Server initialized with bchat context capabilities
+2025-08-10 09:37:21,429 - MCP - INFO - Searching with query: MCP server refactor
+2025-08-10 09:37:21,430 - MCP - INFO - Index path: /Users/admin/Documents/Developer/bchat/data/chats/chat_index.json
+2025-08-10 09:37:21,430 - MCP - INFO - Index exists: True
+2025-08-10 09:37:21,430 - MCP - INFO - Search results: 2 found
+2025-08-10 09:37:21,430 - MCP - INFO - Result 0: The session focused on testing the error handling implementation for the MCP server.
+2025-08-10 09:37:21,430 - MCP - INFO - Result 1: The user is inquiring about the implementation of Claude code integration with the MCP protocol.
+2025-08-10 09:42:31,544 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:42:38,429 - MCP - INFO - Searching with query: professional MCP architecture
+2025-08-10 09:42:38,429 - MCP - INFO - Index path: /Users/admin/Documents/Developer/bchat/data/chats/chat_index.json
+2025-08-10 09:42:38,430 - MCP - INFO - Index exists: True
+2025-08-10 09:42:38,430 - MCP - INFO - Search results: 2 found
+2025-08-10 09:42:38,430 - MCP - INFO - Result 0: The user is inquiring about the implementation of Claude code integration with the MCP protocol.
+2025-08-10 09:42:38,430 - MCP - INFO - Result 1: The session focused on testing the error handling implementation for the MCP server.
+2025-08-10 09:45:21,980 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:45:28,738 - MCP - INFO - Searching with query: test
+2025-08-10 09:45:28,738 - MCP - INFO - Index path: /Users/admin/Documents/Developer/bchat/data/chats/chat_index.json
+2025-08-10 09:45:28,738 - MCP - INFO - Index exists: True
+2025-08-10 09:45:28,739 - MCP - INFO - Search results: 1 found
+2025-08-10 09:45:28,739 - MCP - INFO - Result 0: The session focused on testing the error handling implementation for the MCP server.
+2025-08-10 09:45:44,199 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:49:26,330 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:49:26,373 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:49:26,416 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:49:26,461 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:49:26,503 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:49:26,545 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:49:26,589 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:49:26,630 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:49:26,673 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:49:26,718 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:49:26,758 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:49:26,798 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:49:26,842 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:49:26,886 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:49:26,928 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:49:26,971 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:49:27,013 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:49:27,057 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:49:27,102 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:55:10,604 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:55:10,647 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:55:10,691 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:55:10,731 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:55:10,775 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:55:10,815 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:55:10,854 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:55:10,897 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:55:10,937 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:55:10,978 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:55:11,019 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:55:11,058 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:55:11,097 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:55:11,138 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:55:11,178 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:55:11,220 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:55:11,262 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:55:11,301 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 09:55:11,345 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:03:01,680 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:03:09,532 - MCP - INFO - Searching with query: MCP testing validation
+2025-08-10 10:03:09,532 - MCP - INFO - Index path: /Users/admin/Documents/Developer/bchat/data/chats/chat_index.json
+2025-08-10 10:03:09,532 - MCP - INFO - Index exists: True
+2025-08-10 10:03:09,532 - MCP - INFO - Search results: 2 found
+2025-08-10 10:03:09,532 - MCP - INFO - Result 0: The session focused on testing the error handling implementation for the MCP server.
+2025-08-10 10:03:09,532 - MCP - INFO - Result 1: The user is inquiring about the implementation of Claude code integration with the MCP protocol.
+2025-08-10 10:03:29,984 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:03:37,390 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:03:37,440 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:03:38,925 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:04:11,985 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:04:12,028 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:04:12,073 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:04:12,114 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:04:12,158 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:04:12,200 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:04:12,243 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:04:12,287 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:04:12,330 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:04:12,371 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:04:12,412 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:04:12,452 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:04:12,493 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:04:12,537 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:04:12,578 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:04:12,620 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:04:12,663 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:04:12,703 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:04:12,742 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:05:05,926 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:05:05,968 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:05:06,009 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:05:06,056 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:05:06,098 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:05:06,138 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:05:06,179 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:05:06,220 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:05:06,263 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:05:06,303 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:05:06,342 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:05:06,384 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:05:06,424 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:05:06,463 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:05:06,505 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:05:06,546 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:05:06,588 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:05:06,630 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:05:06,671 - MCP - INFO - bchat MCP Server initialized with context capabilities
+2025-08-10 10:07:26,141 - MCP - INFO - bchat MCP Server initialized with context capabilities

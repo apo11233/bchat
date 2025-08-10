@@ -1,31 +1,40 @@
-[2025-08-08T13:52:41.3NZ] [gemini_20250808_095241_40427] [SESSION] Session started - Gemini CLI wrapper
-[2025-08-08T13:52:41.3NZ] [gemini_20250808_095241_40427] [INFO] Session ID: gemini_20250808_095241_40427
-[2025-08-08T13:52:41.3NZ] [gemini_20250808_095241_40427] [INFO] Log file: /Users/admin/Documents/Developer/bchat/chats/gemini_current_day_raw.log
-[2025-08-08T13:52:41.3NZ] [gemini_20250808_095241_40427] [INFO] Command: gemini-cli --help
-[2025-08-08T13:52:42.3NZ] [gemini_20250808_095241_40427] [GEMINI_OUTPUT] gemini [options]
-[2025-08-08T13:52:42.3NZ] [gemini_20250808_095241_40427] [INFO] Gemini CLI exited with code: 0
-[2025-08-08T13:52:42.3NZ] [gemini_20250808_095241_40427] [SESSION] Session ended
+[2025-08-10T12:20:50.3NZ] [gemini_20250810_082050_12685] [SESSION] Session started - Gemini CLI wrapper
+[2025-08-10T12:20:50.3NZ] [gemini_20250810_082050_12685] [INFO] Session ID: gemini_20250810_082050_12685
+[2025-08-10T12:20:50.3NZ] [gemini_20250810_082050_12685] [INFO] Log file: /Users/admin/Documents/Developer/bchat/data/chats/gemini_current_day_raw.log
+[2025-08-10T12:20:50.3NZ] [gemini_20250810_082050_12685] [INFO] Command: gemini-cli --context bchat-context --list-tools
+[2025-08-10T12:20:50.3NZ] [gemini_20250810_082050_12685] [NON_INTERACTIVE_INPUT] --context bchat-context --list-tools
+[2025-08-10T12:20:50.3NZ] [gemini_20250810_082050_12685] [INFO] Gemini CLI exited with code: 1
+[2025-08-10T12:20:50.3NZ] [gemini_20250810_082050_12685] [SESSION] Session ended
 
-[2025-08-08T14:11:32.3NZ] [gemini_20250808_101132_52749] [SESSION] Session started - Gemini CLI wrapper
-[2025-08-08T14:11:32.3NZ] [gemini_20250808_101132_52749] [INFO] Session ID: gemini_20250808_101132_52749
-[2025-08-08T14:11:32.3NZ] [gemini_20250808_101132_52749] [INFO] Log file: /Users/admin/Documents/Developer/bchat/data/chats/gemini_current_day_raw.log
-[2025-08-08T14:11:32.3NZ] [gemini_20250808_101132_52749] [INFO] Command: gemini-cli --help
-[2025-08-08T14:11:33.3NZ] [gemini_20250808_101132_52749] [GEMINI_OUTPUT] gemini [options]
-[2025-08-08T14:11:33.3NZ] [gemini_20250808_101132_52749] [INFO] Gemini CLI exited with code: 0
-[2025-08-08T14:11:33.3NZ] [gemini_20250808_101132_52749] [SESSION] Session ended
+[2025-08-10T12:21:17.3NZ] [gemini_20250810_082117_12773] [SESSION] Session started - Gemini CLI wrapper
+[2025-08-10T12:21:17.3NZ] [gemini_20250810_082117_12773] [INFO] Session ID: gemini_20250810_082117_12773
+[2025-08-10T12:21:17.3NZ] [gemini_20250810_082117_12773] [INFO] Log file: /Users/admin/Documents/Developer/bchat/data/chats/gemini_current_day_raw.log
+[2025-08-10T12:21:17.3NZ] [gemini_20250810_082117_12773] [INFO] Command: gemini-cli --context bchat-context --list-tools
+[2025-08-10T12:21:17.3NZ] [gemini_20250810_082117_12773] [NON_INTERACTIVE_INPUT] --context bchat-context --list-tools
+[2025-08-10T12:21:17.3NZ] [gemini_20250810_082117_12773] [INFO] Gemini CLI exited with code: 1
+[2025-08-10T12:21:17.3NZ] [gemini_20250810_082117_12773] [SESSION] Session ended
 
-bchat semantic analysis collaboration request - analyzing foundational goals and user cases for AI conversation intelligence system
-[2025-08-09T05:33:19.3NZ] [gemini_20250809_013319_55027] [SESSION] Session started - Gemini CLI wrapper
-[2025-08-09T05:33:19.3NZ] [gemini_20250809_013319_55027] [INFO] Session ID: gemini_20250809_013319_55027
-[2025-08-09T05:33:19.3NZ] [gemini_20250809_013319_55027] [INFO] Log file: /Users/admin/Documents/Developer/bchat/data/chats/gemini_current_day_raw.log
-[2025-08-09T05:33:19.3NZ] [gemini_20250809_013319_55027] [INFO] Command: gemini-cli this
-[2025-08-09T05:34:06.3NZ] [gemini_20250809_013319_55027] [SESSION] Session ended
+[2025-08-10T12:21:49.3NZ] [gemini_20250810_082149_12850] [SESSION] Session started - Gemini CLI wrapper
+[2025-08-10T12:21:49.3NZ] [gemini_20250810_082149_12850] [INFO] Session ID: gemini_20250810_082149_12850
+[2025-08-10T12:21:49.3NZ] [gemini_20250810_082149_12850] [INFO] Log file: /Users/admin/Documents/Developer/bchat/data/chats/gemini_current_day_raw.log
+[2025-08-10T12:21:49.3NZ] [gemini_20250810_082149_12850] [INFO] Command: gemini-cli --context bchat-context --list-tools
+[2025-08-10T12:21:49.3NZ] [gemini_20250810_082149_12850] [NON_INTERACTIVE_INPUT] --context bchat-context --list-tools
+[2025-08-10T12:21:49.3NZ] [gemini_20250810_082149_12850] [INFO] Gemini CLI exited with code: 1
+[2025-08-10T12:21:49.3NZ] [gemini_20250810_082149_12850] [SESSION] Session ended
 
-[2025-08-09T05:35:33.3NZ] [gemini_20250809_013533_55172] [SESSION] Session started - Gemini CLI wrapper
-[2025-08-09T05:35:33.3NZ] [gemini_20250809_013533_55172] [INFO] Session ID: gemini_20250809_013533_55172
-[2025-08-09T05:35:33.3NZ] [gemini_20250809_013533_55172] [INFO] Log file: /Users/admin/Documents/Developer/bchat/data/chats/gemini_current_day_raw.log
-[2025-08-09T05:35:33.3NZ] [gemini_20250809_013533_55172] [INFO] Command: gemini-cli again :D haha
-[2025-08-09T05:35:33.3NZ] [gemini_20250809_013533_55172] [NON_INTERACTIVE_INPUT] again :D haha
-[2025-08-09T05:35:34.3NZ] [gemini_20250809_013533_55172] [INFO] Gemini CLI exited with code: 1
-[2025-08-09T05:35:34.3NZ] [gemini_20250809_013533_55172] [SESSION] Session ended
+[2025-08-10T12:22:07.3NZ] [gemini_20250810_082207_12922] [SESSION] Session started - Gemini CLI wrapper
+[2025-08-10T12:22:07.3NZ] [gemini_20250810_082207_12922] [INFO] Session ID: gemini_20250810_082207_12922
+[2025-08-10T12:22:07.3NZ] [gemini_20250810_082207_12922] [INFO] Log file: /Users/admin/Documents/Developer/bchat/data/chats/gemini_current_day_raw.log
+[2025-08-10T12:22:07.3NZ] [gemini_20250810_082207_12922] [INFO] Command: gemini-cli --context bchat-context --list-tools
+[2025-08-10T12:22:07.3NZ] [gemini_20250810_082207_12922] [NON_INTERACTIVE_INPUT] --context bchat-context --list-tools
+[2025-08-10T12:22:08.3NZ] [gemini_20250810_082207_12922] [INFO] Gemini CLI exited with code: 1
+[2025-08-10T12:22:08.3NZ] [gemini_20250810_082207_12922] [SESSION] Session ended
+
+[2025-08-10T12:22:25.3NZ] [gemini_20250810_082225_12992] [SESSION] Session started - Gemini CLI wrapper
+[2025-08-10T12:22:25.3NZ] [gemini_20250810_082225_12992] [INFO] Session ID: gemini_20250810_082225_12992
+[2025-08-10T12:22:25.3NZ] [gemini_20250810_082225_12992] [INFO] Log file: /Users/admin/Documents/Developer/bchat/data/chats/gemini_current_day_raw.log
+[2025-08-10T12:22:25.3NZ] [gemini_20250810_082225_12992] [INFO] Command: gemini-cli --context bchat-context --list-tools
+[2025-08-10T12:22:25.3NZ] [gemini_20250810_082225_12992] [NON_INTERACTIVE_INPUT] --context bchat-context --list-tools
+[2025-08-10T12:22:26.3NZ] [gemini_20250810_082225_12992] [INFO] Gemini CLI exited with code: 1
+[2025-08-10T12:22:26.3NZ] [gemini_20250810_082225_12992] [SESSION] Session ended
 

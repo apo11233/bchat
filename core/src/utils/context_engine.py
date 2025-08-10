@@ -15,7 +15,7 @@ class ContextualQueryAnalyzer:
     """Analyzes a prompt to determine if it is a contextual query."""
 
     def __init__(self):
-        self.contextual_keywords = ["remember", "recall", "what was", "what were", "what did", "what does", "find", "search for", "in our last conversation", "from last week"]
+        self.contextual_keywords = ["remember", "recall", "what was", "what were", "what did", "what does", "what have", "find", "search for", "in our last conversation", "from last week", "previously", "before", "earlier"]
         self.provider_keywords = ["claude", "gemini"]
 
     def analyze(self, prompt: str) -> Dict:
@@ -247,7 +247,7 @@ Decisions: {log_data.get('sections', [{}])[0].get('items', [])}
 
     def extract_advanced_context(self, provider: str, max_files: int = 3) -> str:
         """Extracts context from the advanced data sources for a given provider."""
-        if provider.lower() != 'claude':
+        if not provider or provider.lower() != 'claude':
             return ""
 
         claude_dir = Path.home() / '.claude'

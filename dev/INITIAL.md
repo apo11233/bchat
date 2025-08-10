@@ -1,13 +1,32 @@
-# Initial Development Directive: Architectural Shift
+# bchat Development Initiative
 
 **Date**: 2025-08-09
+**Status**: ACTIVE
 
-This document marks the starting point for a significant architectural improvement to the `bchat` system.
+This document marks the transition to the ambitious `bchat` vision - a comprehensive AI collaboration platform.
 
-The current file-monitoring approach is considered fragile and a potential point of failure. A new proposal has been created to address this by shifting to a more robust direct chat export mechanism.
+## Project References
 
-This new proposal is the primary focus of the current development stage. All other development activities should be secondary to the implementation and validation of this architectural shift.
+**Primary Coordinator Document**: [Stages Workflow](dev_stages/stages_workflow.md)
+**Master Context Memory**: [llm.txt](../llm.txt)
+**Vision Documents**: [ST_06_bchat_Vision](dev_stages/ST_06_bchat_Vision/)
 
-**Please review the full proposal here:**
+## Current Focus
 
-[ST_00/05-250809-architectural_shift_to_direct_chat_export.md](dev_stages/ST_00/05-250809-architectural_shift_to_direct_chat_export.md)
+The project is now following a structured, stage-based development approach with:
+- Gate-controlled progression through defined stages
+- Comprehensive status tracking and coordination
+- Multi-AI collaboration framework development
+- Iterative implementation with explicit approval gates
+
+**Next Action**: Define ST_00 MVP requirements and begin foundation development.
+
+## Development Protocol
+
+All development activities should:
+1. Reference the [Stages Workflow](dev_stages/stages_workflow.md) for current status
+2. Update stage-specific llm.txt files with progress and learnings
+3. Follow the gate-controlled progression protocol
+4. Maintain continuous documentation and status updates
+
+**Project Evolution**: From context-aware chat processor → AI collaboration platform

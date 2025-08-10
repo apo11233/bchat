@@ -24,8 +24,37 @@ MONITOR_SCRIPT="$PROJECT_ROOT/core/src/chat_monitor.py"
 
 # Handle status command
 if [ "$1" = "--status" ]; then
-    exec "$PROJECT_ROOT/bin/bchat-status"
+    "$PROJECT_ROOT/bin/bchat-status"
+elif [ "$1" = "--start-server" ]; then
+    # Check if the MCP server is running
+    if ! pgrep -f "mcp_server.py" > /dev/null; then
+        # Start the MCP server in http mode in the background
+        python3 "$PROJECT_ROOT/mcp_server.py" &
+        # Wait for the server to start
+        sleep 2
+    fi
+elif [ "$1" = "--stop-server" ]; then
+    # Stop the MCP server
+    pkill -f "mcp_server.py"
+# Handle status command
+if [ "$1" = "--status" ]; then
+    "$PROJECT_ROOT/bin/bchat-status"
+elif [ "$1" = "--start-server" ]; then
+    # Check if the MCP server is running
+    if ! pgrep -f "mcp_server.py" > /dev/null; then
+        # Start the MCP server in http mode in the background
+        python3 "$PROJECT_ROOT/mcp_server.py" &
+        # Wait for the server to start
+        sleep 2
+    fi
+elif [ "$1" = "--stop-server" ]; then
+    # Stop the MCP server
+    pkill -f "mcp_server.py"
+elif [ "$1" = "-p" ]; then
+    # Handle the -p flag for prompts
+    shift # remove the -p
+    "$PYTHON_EXEC" "$MONITOR_SCRIPT" "$@"
 else
-    # All other arguments are passed to the python script
-    exec "$PYTHON_EXEC" "$MONITOR_SCRIPT" "$@"
+    # All other arguments are treated as the prompt
+    "$PYTHON_EXEC" "$MONITOR_SCRIPT" "$@"
 fi

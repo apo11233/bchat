@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "bchat-context": {
+      "command": "python3",
+      "args": ["mcp_server.py", "--stdio"],
+      "cwd": "/Users/admin/Documents/Developer/bchat",
+      "env": {},
+      "timeout": 15000,
+      "trust": true
+    }
+  }
+}

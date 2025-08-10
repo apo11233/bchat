@@ -1,0 +1,22 @@
+#!/bin/bash
+# Test script for Gemini CLI
+
+# Resolve the project root directory
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+SCRIPT_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+# Activate virtual environment
+VENV_PATH="$PROJECT_ROOT/dev/venv"
+if [ -f "$VENV_PATH/bin/activate" ]; then
+    source "$VENV_PATH/bin/activate"
+else
+    echo "Warning: Virtual environment not found at $VENV_PATH" >&2
+fi
+
+gemini --context bchat-context --list-tools

@@ -78,7 +78,7 @@ echo ""
 echo "🐍 Python Dependencies:"
 # Set PYTHONPATH to include reorganized source
 export PYTHONPATH="$SCRIPT_DIR/core/src:$PYTHONPATH"
-if python3 -c "import watchdog, google.generativeai, dotenv; print('   ✅ All core dependencies available')" 2>/dev/null; then
+if python3 -c "import google.generativeai, dotenv; print('   ✅ All core dependencies available')" 2>/dev/null; then
     echo "   ✅ All core dependencies available"
 else
     echo "   ❌ Missing Python dependencies - check virtual environment"

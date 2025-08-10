@@ -7,3 +7,6 @@
 
 # macOS
 .DS_Store
+
+# Reference repositories (external git repos used for analysis)
+dev/dev_stages/ST_00_Foundation_Audit/10-gemini-mcp-tool/
