@@ -23,3 +23,7 @@ __pycache__/
 dev/dev_stages/ST_00_Foundation_Audit/10-gemini-mcp-tool/
 dev/dev_stages/ST_06_bchat_Vision/07-claude-self-reflect/
 dev/dev_stages/ST_06_bchat_Vision/08-codanna/
+
+# Cloned Repositories
+dev/dev_stages/ST_06_bchat_Vision/12-claude-flow/
+dev/dev_stages/ST_06_bchat_Vision/13-superclaude/
