@@ -22,3 +22,4 @@ __pycache__/
 # Reference repositories (external git repos used for analysis)
 dev/dev_stages/ST_00_Foundation_Audit/10-gemini-mcp-tool/
 dev/dev_stages/ST_06_bchat_Vision/07-claude-self-reflect/
+dev/dev_stages/ST_06_bchat_Vision/08-codanna/

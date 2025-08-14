@@ -8,8 +8,6 @@ import sys
 import json
 import re
 import logging
-import time
-from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional
 
@@ -44,16 +42,6 @@ class ContextualQueryAnalyzer:
 class ChatIndexSearcher:
     """Searches the chat index for relevant conversations."""
 
-    STOP_WORDS = set([
-        "a", "an", "the", "and", "or", "but", "is", "are", "was", "were", "in", "on", "at",
-        "of", "for", "to", "with", "by", "about", "as", "it", "that", "this", "what",
-        "which", "who", "whom", "where", "when", "how", "why", "i", "you", "he", "she",
-        "we", "they", "me", "him", "her", "us", "them", "my", "your", "his", "its",
-        "our", "their", "mine", "yours", "hers", "ours", "theirs", "do", "does", "did",
-        "can", "could", "will", "would", "should", "may", "might", "must", "have", "has",
-        "had", "be", "been", "being", "from", "what's", "what is"
-    ])
-
     def __init__(self, index_path: Path):
         self.index_path = index_path
         self.index_data = self._load_index()
@@ -71,58 +59,24 @@ class ChatIndexSearcher:
         if not self.index_data:
             return []
 
-        # Filter out stop words from the query
-        filtered_keywords = [kw.lower() for kw in keywords if kw.lower() not in self.STOP_WORDS]
-        if not filtered_keywords:
-            # If only stop words were provided, use the original keywords
-            filtered_keywords = [kw.lower() for kw in keywords]
-
         scored_entries = []
-        current_time = datetime.now()
-
         for entry in self.index_data:
             if provider_filter and entry.get('ai_source', '').lower() != provider_filter.lower():
                 continue
 
-            # Keyword score
             score = 0
-            summary = entry.get('executive_summary', '').lower()
-            entry_keywords = " ".join(entry.get('keywords', [])).lower()
-            combined_text = summary + " " + entry_keywords
-
-            for keyword in filtered_keywords:
-                if keyword in combined_text:
-                    score += 1 # Simple count of matched keywords
+            for keyword in keywords:
+                if keyword.lower() in entry.get('executive_summary', '').lower():
+                    score += 2
+                if keyword.lower() in " ".join(entry.get('keywords', [])).lower():
+                    score += 1
             
             if score > 0:
-                # Add existing relevance score
                 score += entry.get('relevance_score', 0)
+                scored_entries.append({"score": score, "entry": entry})
 
-                # Recency score
-                try:
-                    match = re.search(r'(\d{8}_\d{6})', entry.get('file_path', ''))
-                    if match:
-                        timestamp_str = match.group(1)
-                        entry_dt = datetime.strptime(timestamp_str, '%Y%m%d_%H%M%S')
-
-                        age = current_time - entry_dt
-                        age_hours = age.total_seconds() / 3600
-
-                        # More aggressive exponential decay based on hours.
-                        # This gives a significant boost to items from the last 24 hours.
-                        # A document created right now gets +2 bonus points.
-                        # A document created 24 hours ago gets +2 * (0.85^24) ~= +0.04 bonus points.
-                        recency_score = 2 * (0.85 ** age_hours)
-                        score += recency_score
-                except (ValueError, TypeError) as e:
-                    logging.warning(f"Could not parse timestamp from file_path '{entry.get('file_path')}': {e}")
-
-                # Add the final score to the entry for debugging and sorting
-                entry['search_score'] = score
-                scored_entries.append(entry)
-
-        scored_entries.sort(key=lambda x: x.get('search_score', 0), reverse=True)
-        return scored_entries[:limit]
+        scored_entries.sort(key=lambda x: x['score'], reverse=True)
+        return [item['entry'] for item in scored_entries[:limit]]
 
 class ShellSnapshotParser:
     """Parses Claude's shell snapshot files."""

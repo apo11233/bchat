@@ -580,3 +580,71 @@ ST_XX_Stage_Name/
 **Cleanup Frequency**: Mandatory after each stage completion before advancement to next stage.
 
 **This cleanup protocol ensures systematic organization, eliminates technical debt, and maintains clear project structure across all development stages in the bchat methodology framework.**
+
+### 4.6. Safe Branch Integration Protocol (MANDATORY)
+
+**Triggered By**: Destructive merge that deleted 53 development documentation files during feature/enhanced-keyword-search integration
+
+#### Core Requirements
+- **NEVER perform direct destructive merges** from GitHub branches without careful analysis
+- **ALWAYS create integration plans** before applying external changes
+- **MANDATORY testing phase** before any integration becomes permanent
+- **Preserve all existing project documentation** during feature integration
+
+#### Mandatory Integration Workflow
+```bash
+# 1. Analysis Phase - MANDATORY before any integration
+git checkout feature/target-branch
+git log --oneline main..feature/target-branch  # Review all changes
+git diff main..feature/target-branch --name-status  # Check file modifications
+
+# 2. Selective Integration - NEVER wholesale merge
+git checkout main
+git checkout feature/target-branch -- path/to/specific/files
+# OR use cherry-pick for specific commits
+git cherry-pick specific-commit-hash
+
+# 3. Testing Phase - MANDATORY validation
+# Test integrated functionality
+# Verify no documentation loss
+# Validate all existing features still work
+
+# 4. Documentation Preservation Check
+ls -la dev/dev_stages/  # Verify all stages present
+# Ensure no critical files deleted
+```
+
+#### Branch Integration Decision Matrix
+| Integration Type | Safe Method | Validation Required |
+|------------------|-------------|-------------------|
+| Feature Addition | Selective file checkout + testing | ✅ Functionality + Documentation preservation |
+| Bug Fix | Cherry-pick specific commits | ✅ No regression testing |
+| External Repository | Manual analysis + incremental addition | ✅ Full project structure validation |
+| Enhancement | Create integration plan document first | ✅ Stage-by-stage validation |
+
+#### Quality Assurance Requirements
+**Pre-Integration Checklist**:
+- ✅ All dev_stages/ documentation accounted for
+- ✅ Integration plan documented in appropriate stage
+- ✅ Test plan created for new functionality
+- ✅ Rollback procedure identified
+
+**Post-Integration Validation**:
+- ✅ All original functionality preserved
+- ✅ New functionality working as expected
+- ✅ Documentation framework intact
+- ✅ No file count reduction in critical directories
+
+#### Prohibited Practices
+- Direct `git merge` without analysis of deletions
+- Wholesale branch integration without file-by-file review
+- Integration without testing phase
+- Any operation that reduces development documentation count
+
+#### Enforcement Policy
+- **ENFORCEMENT**: 🔥 **Any integration that deletes project documentation will be immediately reverted** 🔥
+- **RATIONALE**: Development documentation represents months of methodology development and cannot be recreated
+- **EXCEPTION**: Only user-explicitly approved documentation cleanup following proper stage completion protocol
+- **VALIDATION**: All integrations must pass documentation preservation check
+
+This protocol ensures feature enhancement never compromises the systematic development methodology framework that forms bchat's foundation.
